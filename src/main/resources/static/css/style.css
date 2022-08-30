@@ -1,0 +1,26 @@
+@charset "UTF-8";
+
+#wrap {
+	width: 1200px;
+	margin: auto;
+}
+
+header {
+	height: 40px;
+}
+.footprint{
+	height: 30px;
+	width: 30px;
+}
+nav{
+	height: 40px;
+}
+
+.signup-box {
+	width:400px;
+	height:500px;
+}
+
+footer {
+	height:50px;
+}
