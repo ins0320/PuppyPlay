@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>PuppyPlay 회원가입</title>
+<title>회원가입</title>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
@@ -46,8 +46,8 @@
 						
 					<button type="button" id="signUpBtn" class="btn btn-info btn-block mt-3">회원가입</button>				
 				</div>
-				<div class="mt-2 p-3 d-flex justify-content-center align-items-start bg-white  border rounded">
-					계정이 있으신가요? <a href="/user/signin/view">로그인</a>
+				<div class="mt-2 p-2 d-flex justify-content-center align-items-start bg-white  border rounded">
+					계정이 있으신가요? <a href="/user/signin/view" class="italic">로그인</a>
 				</div>
 			</div>
 			<!-- /회원가입 박스 -->	

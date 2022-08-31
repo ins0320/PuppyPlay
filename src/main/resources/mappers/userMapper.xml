@@ -28,15 +28,15 @@
 	
 	<select id="selectCountLoginId" resultType="int">
 		SELECT 
-			count(*)
+				count(*)
 		FROM
-	 		`user`
+	 			`user`
 		WHERE	
-			`loginId` = #{loginId}
+				`loginId` = #{loginId}
 	</select>
 	
 	<select id="selectUser" parameterType="map"
-	resultType="com.yoojung0318.puppyplay.user.dao.UserDAO">
+	resultType="com.yoojung0318.puppyplay.user.model.User">
 		SELECT
 				`loginId`
 				, `password`

@@ -6,27 +6,37 @@
 }
 
 header {
-	height: 40px;
+	height: 100px;
+}
+.italic{
+	font-style: italic;
 }
 .footprint{
-	height: 30px;
-	width: 30px;
+	height: 40px;
+	width: 40px;
 }
 .loginPuppy{
 	width:400px;
-	height:500px;
+	height:450px;
 }
 nav{
-	height: 40px;
+	height: 100px;
+	font-size: 30px;
+	
 }
-
+.nav-text{
+	color:gray;
+}
+a:hover   { 
+	color: black;
+	 }
 .signup-box {
 	width:400px;
 	height:500px;
 }
 .login-box{
 	width:400px;
-	height:500px;
+	height:450px;
 }
 footer {
 	height:50px;

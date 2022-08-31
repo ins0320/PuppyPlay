@@ -19,7 +19,7 @@ public interface UserDAO {
 	
 	//loginId, password 조회
 	public User selectUser(
-			@Param("loginId")String LoginId
+			@Param("loginId")String loginId
 			,@Param("password")String password);
 	
 }
