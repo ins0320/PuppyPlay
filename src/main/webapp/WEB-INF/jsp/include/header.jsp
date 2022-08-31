@@ -6,6 +6,7 @@
 					<h2>Puppy Play</h2>
 					<img src="/static/picture/footprint.png" class="footprint mt-2 ml-2">
 				</div>
-				<div class="mr-3">관리자님<a href="/user/signout">로그아웃</a></div>
-	
+				<c:if test="${not empty userId }">
+					<div class="mr-3">${userLoginId}님 <a href="/user/signout">로그아웃</a></div>
+				</c:if>
 		</header>

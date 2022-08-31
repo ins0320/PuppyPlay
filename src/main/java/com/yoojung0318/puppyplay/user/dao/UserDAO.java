@@ -3,6 +3,8 @@ package com.yoojung0318.puppyplay.user.dao;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
+import com.yoojung0318.puppyplay.user.model.User;
+
 @Repository
 public interface UserDAO {
 
@@ -14,5 +16,10 @@ public interface UserDAO {
 	
 	// 전달된 loginId가 몇 개인지 리턴
 	public int selectCountLoginId(@Param("loginId") String loginId);
+	
+	//loginId, password 조회
+	public User selectUser(
+			@Param("loginId")String LoginId
+			,@Param("password")String password);
 	
 }
