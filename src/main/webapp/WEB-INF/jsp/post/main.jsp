@@ -20,9 +20,10 @@
 	<c:import url="/WEB-INF/jsp/include/nav.jsp" />
 	<section class="d-flex justify-content-center">
 		<div>
-	 		<img src="/static/picture/puppy1.jpg" class="loginPuppy mt-3" />
+	 		<img src="/static/picture/puppy1.jpg" class="mainPuppy1 mt-3" />
 		</div>
 		<div class="main-article mt-3 align-items-center justify-content-center mt-3">
+			<br>
 			<pre class="article-comment1 text-center p-3 mt-5" > " 우리아이를 위한 <b class="font-size-35">최고의</b> 경험 "</pre>
 			<div class="d-flex justify-content-center align-items-center">
 				<pre class="article-comment2 text-center mt-4">Puppy Play</pre>

@@ -48,19 +48,65 @@ a:hover   {
 }
 .main-article {
 	width:600px;
-	height:450px;
-	background-color:#696969;
+	height:600px;
+	background-color: #506c7e;
+}
+.mainPuppy1{
+	width:600px;
+	height:600px;
 }
 .article-comment1{
 	font-size: 30px;
+	font-weight: bold;
+	text-shadow: 0px 0px 3px black;
 	color: white ;
-	text-shadow: 2px 2px 1px black; 
+	
 }
 .article-comment2{
 	font-size: 70px;
 	font:italic;
 	color: white;
 	text-shadow: 2px 3px 3px black; 
+}
+
+.today-title{
+	font-size: 20px;
+	color: #000040;
+}
+.today-schuedule-time{
+	width:300px;
+	height:70px;
+	background-color: #7a98ab;
+	 border-radius: 20px 0px 0px 20px;
+}
+.today-schuedule-time > .text{
+	font-size : 30px;
+	color:white;
+	
+}
+.today-schuedule-text{
+	width:400px;
+	height:70px;
+	background-color: white;
+	border-radius: 0px 20px 20px 0px;
+}
+.today-schuedule-text > .text{
+	font-size : 25px;
+}
+.playtime{
+	width: 350px;
+	height: 510px;
+	font-size : 20px;
+	border-width: 3px 3px 3px 3px;
+	border-color: #7a98ab;
+	border-style: double;
+	background-color: white;
+	border-radius: 20px 20px 20px 20px;
+	
+	}
+.bi-clock{
+	font-size: 40px;
+	color: white;
 }
 footer {
 	height:50px;
