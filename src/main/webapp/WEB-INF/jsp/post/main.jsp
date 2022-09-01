@@ -48,7 +48,7 @@
 	                if(currentImageIndex == bannerList.length) {
 	                    currentImageIndex = 0;
 	                }
-	            }, 3000); 
+	            }, 2000); 
 	 });	 
  </script>  
  
