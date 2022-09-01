@@ -27,5 +27,10 @@ public class PostController {
 			return "post/today";
 		}
 		
+		//메인화면 테스트
+		@GetMapping("/post/maintest/view")
+		public String mainTestView() {
+			return "post/maincopy";
+		}
 		
 }

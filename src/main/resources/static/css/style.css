@@ -47,7 +47,7 @@ a:hover   {
 	height:450px;
 }
 .main-article {
-	width:600px;
+	width:700px;
 	height:600px;
 	background-color: #506c7e;
 }
@@ -55,12 +55,15 @@ a:hover   {
 	width:600px;
 	height:600px;
 }
+.banner > img{
+	width:600px;
+	height:600px;
+}
 .article-comment1{
-	font-size: 30px;
+	font-size: 40px;
 	font-weight: bold;
-	text-shadow: 0px 0px 3px black;
 	color: white ;
-	
+	text-shadow: 2px 3px 3px black; 	
 }
 .article-comment2{
 	font-size: 70px;
