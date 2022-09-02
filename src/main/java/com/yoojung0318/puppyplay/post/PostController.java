@@ -14,6 +14,14 @@ public class PostController {
 			return "post/main";
 		}
 		
+
+		//메인화면(테스트)
+		@GetMapping("/post/maintest/view")
+		public String mainTest() {
+			
+			return "post/mainTest";
+		}
+		
 		//이달의 일정 화면
 		@GetMapping("/post/monthly/view")
 		public String monthlyView() {
@@ -27,10 +35,6 @@ public class PostController {
 			return "post/today";
 		}
 		
-		//메인화면 테스트
-		@GetMapping("/post/maintest/view")
-		public String mainTestView() {
-			return "post/maincopy";
-		}
+
 		
 }

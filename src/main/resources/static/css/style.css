@@ -55,7 +55,11 @@ a:hover   {
 	width:600px;
 	height:600px;
 }
-.banner > img{
+.banner-img {
+	width:600px;
+	height:600px;
+}
+.carousel-inner{
 	width:600px;
 	height:600px;
 }
@@ -71,7 +75,6 @@ a:hover   {
 	color: white;
 	text-shadow: 2px 3px 3px black; 
 }
-
 .today-title{
 	font-size: 20px;
 	color: #000040;
