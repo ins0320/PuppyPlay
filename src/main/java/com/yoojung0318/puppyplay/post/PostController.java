@@ -7,33 +7,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class PostController {
 
-		//메인화면
-		@GetMapping("/post/main/view")
-		public String mainView() {
-			
-			return "post/main";
-		}
-		
 
-		//메인화면(테스트)
-		@GetMapping("/post/maintest/view")
-		public String mainTest() {
-			
-			return "post/mainTest";
-		}
-		
-		//이달의 일정 화면
-		@GetMapping("/post/monthly/view")
-		public String monthlyView() {
-			
-			return "post/monthly";
-		}
-		//오늘의 일정 화면
-		@GetMapping("/post/today/view")
-		public String  todayView() {
-			
-			return "post/today";
-		}
+
+
 		
 
 		

@@ -8,6 +8,8 @@
 header {
 	height: 100px;
 }
+
+/*글씨, footprint-image, 자주 쓰는 이미지*/
 .italic{
 	font-style: italic;
 }
@@ -19,11 +21,27 @@ header {
 	height: 50px;
 	width: 50px;
 }
-
+.puppy4{
+	height: 130px;
+	width: 130px;
+}
+<!--login-->
 .loginPuppy{
 	width:400px;
 	height:450px;
 }
+.login-box{
+	width:400px;
+	height:450px;
+}
+
+/*signup*/
+.signup-box {
+	width:400px;
+	height:500px;
+}
+
+/*main + main-banner*/
 nav{
 	height: 100px;
 	font-size: 30px;
@@ -38,14 +56,6 @@ nav{
 a:hover   { 
 	color: black;
 	 }
-.signup-box {
-	width:400px;
-	height:500px;
-}
-.login-box{
-	width:400px;
-	height:450px;
-}
 .main-article {
 	width:700px;
 	height:600px;
@@ -75,6 +85,8 @@ a:hover   {
 	color: white;
 	text-shadow: 2px 3px 3px black; 
 }
+
+/*today*/
 .today-title{
 	font-size: 20px;
 	color: #000040;
@@ -113,6 +125,16 @@ a:hover   {
 .bi-clock{
 	font-size: 40px;
 	color: white;
+}
+
+/*monthly*/
+.monthly-logo{
+	height: 130px;
+	background-color: #ebe7e8;	
+}
+.monthly-logo-text > h1 {
+	font-size: 80px; 
+	color: #506c80;	
 }
 footer {
 	height:50px;
