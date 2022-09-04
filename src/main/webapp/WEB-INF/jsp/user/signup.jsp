@@ -103,48 +103,48 @@
 		});			
 		
 	});
-$("#signUpBtn").on("click", function() {
-			
-			var loginId = $("#loginIdInput").val();
-			var password = $("#passwordInput").val();
-			var passwordConfirm = $("#passwordConfirmInput").val();
-			var name = $("#nameInput").val()
-			var email = $("#emailInput").val()
-			
-			if(loginId == "") {
-				alert("아이디를 입력하세요");
-				return ;
-			}
-			
-			if(!isDuplicateCheck) {
-				alert("중복여부 체크를 진행해주세요");
-				return ;
-			}
-			
-			if(isDuplicateId) {
-				alert("중복된 아이디입니다");
-				return ;
-			}
-			
-			if(password == "") {
-				alert("비밀번호를 입력하세요");
-				return ;
-			}
-			
-			if(password != passwordConfirm) {
-				alert("비밀번호를 확인하세요");
-				return ;
-			}
-			
-			if(name == "") {
-				alert("이름을 입력하세요");
-				return ;
-			}
-			
-			if(email == "") {
-				alert("이메일을 입력하세요");
-				return ;
-			}
+			$("#signUpBtn").on("click", function() {
+						
+						var loginId = $("#loginIdInput").val();
+						var password = $("#passwordInput").val();
+						var passwordConfirm = $("#passwordConfirmInput").val();
+						var name = $("#nameInput").val()
+						var email = $("#emailInput").val()
+						
+						if(loginId == "") {
+							alert("아이디를 입력하세요");
+							return ;
+						}
+						
+						if(!isDuplicateCheck) {
+							alert("중복여부 체크를 진행해주세요");
+							return ;
+						}
+						
+						if(isDuplicateId) {
+							alert("중복된 아이디입니다");
+							return ;
+						}
+						
+						if(password == "") {
+							alert("비밀번호를 입력하세요");
+							return ;
+						}
+						
+						if(password != passwordConfirm) {
+							alert("비밀번호를 확인하세요");
+							return ;
+						}
+						
+						if(name == "") {
+							alert("이름을 입력하세요");
+							return ;
+						}
+						
+						if(email == "") {
+							alert("이메일을 입력하세요");
+							return ;
+						}
 			
 			$.ajax({
 				type:"post",
