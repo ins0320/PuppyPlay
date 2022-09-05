@@ -20,6 +20,8 @@
 	<div class="wrap">
 		<c:import url="/WEB-INF/jsp/include/header.jsp" />
 		<c:import url="/WEB-INF/jsp/include/nav.jsp" />
+		
+		
 		<section class="d-flex justify-content-center">
 		
 		

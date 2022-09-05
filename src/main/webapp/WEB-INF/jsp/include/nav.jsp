@@ -9,12 +9,14 @@
 			<li class="nav-item "><a href="#" class="nav-link nav-text">공지사항</a></li>
 			<li class="nav-item "><a href="#" class="nav-link nav-text">Q&A</a></li>
 		</ul>
-	<!--  
-		<c:choose test="${userId eq 'admin'}">>
+	</nav>
+	
+	
+		<%--   
+		<c:choose test="${userId eq 'admin'}">
 			location.href="/post/monthlyCreate.jsp";
 		</c:choose>
 		<c:otherwise>
 			location.href="/post/monthlyList.jsp";
 		</c:otherwise>
-	-->		
-	</nav>
+		--%> 	
