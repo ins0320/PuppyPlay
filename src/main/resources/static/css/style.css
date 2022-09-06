@@ -25,6 +25,10 @@ header {
 	height: 130px;
 	width: 130px;
 }
+.hr-solid {
+  border : 0px;
+  border-top: 3px solid darkgrey;
+}
 /*login*/
 .loginPuppy{
 	width:400px;
@@ -38,7 +42,7 @@ header {
 /*signup*/
 .signup-box {
 	width:400px;
-	height:500px;
+	height:530px;
 }
 
 /*main + main-banner*/

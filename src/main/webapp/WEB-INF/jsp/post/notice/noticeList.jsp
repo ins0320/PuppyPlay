@@ -1,11 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>	
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>이달의 일정</title>
+<title>공지사항</title>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
@@ -18,6 +19,7 @@
  	<div class="wrap">
  		<c:import url="/WEB-INF/jsp/include/header.jsp"/>
  		<section>
+ 		
  		<!-- monthly-logo -->
  			<div class="monthly-logo col-12 d-flex justify-content-center align-items-between ">
  				<div class="monthly-logo-text col-4">
@@ -37,27 +39,27 @@
 		 			<th>글쓴이</th>
 		 			<th>날짜</th>
  				</tr>
- 			<tbody>
+ 			<tbody> 		
+ 			<c:forEach var="notice" items="${noticeList}">
  				<tr>
- 					<td>001</td>
- 					<td>홈페이지 오픈 안내</td>
+ 					<td>${notice.id }</td>
+ 					<td><a href="/post/notice/detail/view?id=${notice.id}">${notice.title }</a></td>
  					<td>관리자</td>
- 					<td>2022/08/24</td>
+ 					<td><fmt:formatDate value="${notice.createdAt}" pattern="yyyy-MM-dd"/></td>
  				</tr>
-	 			<tr>
-	 					<td>002</td>
-	 					<td>주차 안내 입니다.</td>
-	 					<td>관리자</td>
-	 					<td>2022/08/24</td>
-	 				</tr>
+	 		</c:forEach>		
  			</tbody>	
  		</table>
- 		
- 		
- 		
+		<!-- 관리자만 보이는 작성하기 버튼(create로 이동) -->
+		<c:if test="${userId eq 1 }">
+			<div class="d-flex justify-content-end">
+	 				<a href="/post/notice/create/view" class="btn btn-info">작성하기</a>
+	 		</div>
+	 	</c:if>	
  		</section>
  		<c:import url="/WEB-INF/jsp/include/footer.jsp"/>
  	</div>
  
+ 	
 </body>
 </html>

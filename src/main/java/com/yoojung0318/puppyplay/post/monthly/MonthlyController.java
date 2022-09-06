@@ -25,7 +25,7 @@ public class MonthlyController {
 	@GetMapping("/post/monthly/create/view")
 	public String monthlyInput(){
 		
-		return "post/monthlyCreate";
+		return "post/monthly/monthlyCreate";
 	};
 	
 
@@ -43,7 +43,7 @@ public class MonthlyController {
 	//	List<MonthlyDetail> monthlyDetailList = monthlyBO.getMonthlyList(userId);
 	//	model.addAttribute("monthlyList", monthlyDetailList);
 		
-		return "post/monthlyList";
+		return "post/monthly/monthlyList";
 	}
 	
 

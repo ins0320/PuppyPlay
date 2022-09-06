@@ -7,20 +7,20 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Repository;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.yoojung0318.puppyplay.post.notice.bo.NoticeBO;
 
-@Repository
+@RestController
  public class NoticeRestController {
 
 	@Autowired
 	NoticeBO noticeBO;
 	
 	//공지사항 입력
-	@PostMapping("post/notice/create")
+	@PostMapping("/post/notice/create")
 	public Map<String, String> createNotice(
 			@RequestParam("title") String title
 			,@RequestParam("content") String content

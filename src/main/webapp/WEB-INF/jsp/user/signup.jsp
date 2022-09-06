@@ -46,7 +46,7 @@
 						
 					<button type="button" id="signUpBtn" class="btn btn-info btn-block mt-3">회원가입</button>				
 				</div>
-				<div class="mt-2 p-2 d-flex justify-content-center align-items-start bg-white  border rounded">
+				<div class="mt-3 p-2 d-flex justify-content-center align-items-start bg-white  border rounded">
 					계정이 있으신가요? <a href="/user/signin/view" class="italic">로그인</a>
 				</div>
 			</div>

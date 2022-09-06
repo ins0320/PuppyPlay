@@ -26,11 +26,12 @@
  			</div>
  		<!--  /notice-logo -->	
  			<hr class="mt-3">
- 			<div class="d-flex juntify-content-between">
- 				<input type="text" class="form-control col-10" id="titleInput">
- 				<div class="col-1"><h4>${noticeDetail.notice.createdAt}</h4></div>
+ 			<div class="d-flex">
+ 				<label><h2>제목:</h2></label>
+ 				<input type="text" class="form-control col-10 ml-3" id="titleInput">
  			</div>
  			<textarea rows="5" class="form-control mt-2" id="contentInput"></textarea>
+ 			
  			<div class="d-flex justify-content-end">
 	 			<a href="/post/notice/list/view" class="btn btn-info">목록으로</a>
 	 			<button type="button" class="btn btn-info" id="saveBtn">저장</button>
@@ -54,17 +55,13 @@
 				alert("내용을 입력하세요");
 				return;
 			} 
-			
-			//파일을 포함한 파라미터 구성하기
-			var formData = new FormData();
-			formData.append("title", title);
-			formData.append("content", content);
+		
 			
 	 		//api 호출
 	 		$.ajax({
 	 			type:"post",
 	 			url:"/post/notice/create",
-	 			data:formData,
+	 			data:{"title":title, "content":content},
 	 			success:function(data){
 					if(data.result == "success"){
 						location.href ="/post/notice/list/view";

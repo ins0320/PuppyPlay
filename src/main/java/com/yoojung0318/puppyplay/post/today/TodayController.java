@@ -10,6 +10,6 @@ public class TodayController {
 	@GetMapping("/post/today/view")
 	public String  todayView() {
 		
-		return "post/today";
+		return "post/today/today";
 	}
 }

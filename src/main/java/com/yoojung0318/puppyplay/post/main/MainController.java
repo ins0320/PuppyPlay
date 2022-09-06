@@ -10,6 +10,6 @@ public class MainController {
 	@GetMapping("/post/main/view")
 	public String mainView() {
 		
-		return "post/main";
+		return "post/main/main";
 	}
 }

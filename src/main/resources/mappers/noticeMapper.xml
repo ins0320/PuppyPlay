@@ -8,7 +8,7 @@
  
 	 INSERT INTO
 	 				`notice`
-	 (
+	 (	 	
 	 	`userId`
 	 	,`title`
 	 	,`content`
@@ -16,7 +16,7 @@
 	 	,`updatedAt`
 	 )				
  	VALUES
- 	(
+ 	(	
  		#{userId}  
 	 	,#{title}
 	 	, #{content}
@@ -25,5 +25,32 @@
  	)
  </insert>
  
+ <select id="selectNoticeList" parameterType="map"
+ resultType="com.yoojung0318.puppyplay.post.notice.model.Notice">
+
+	SELECT 
+		`id`
+		,`userId`
+	 	,`title`
+	 	,`content`
+	 	,`createdAt`
+	 	,`updatedAt`
+	FROM	
+		`notice`
+ </select>
  
+ <select id="selectNotice" parameterType="int"
+ resultType="com.yoojung0318.puppyplay.post.notice.model.Notice">
+  	SELECT 
+		`id`
+		,`userId`
+	 	,`title`
+	 	,`content`
+	 	,`createdAt`
+	 	,`updatedAt`
+	FROM	
+		`notice`
+	WHERE
+		`id` = #{id}	
+ </select>
  </mapper>
