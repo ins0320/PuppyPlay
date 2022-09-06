@@ -9,6 +9,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.yoojung0318.puppyplay.post.monthly.bo.MonthlyBO;
@@ -27,14 +28,15 @@ public class MonthlyRestController {
 	@PostMapping("/post/monthly/create/view")
 	public Map<String, String> createMonthly(
 			@RequestParam("title") String title
-			,@RequestParam("date") Date date
+			,@RequestParam("start") Date start
+			,@RequestParam("end") Date end
 			,HttpServletRequest request){
 					
 			//글쓴 사람 정보를 같이 저장하기 위해서
 			// 로그인된 사용자의 id(userId - User 테이블의 PK)를 세션을 통해 얻어내고, 이를 사용
 			HttpSession session = request.getSession();
 			int userId =(Integer)session.getAttribute("userId");
-			int count = monthlyBO.addMonthly(userId,title,date);
+			int count = monthlyBO.addMonthly(userId,title,start,end);
 			
 			Map<String, String> result = new HashMap<>();
 			if(count == 1) {
@@ -45,4 +47,5 @@ public class MonthlyRestController {
 			
 			return result;	
 	} 
+	
 }

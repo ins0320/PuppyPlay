@@ -4,25 +4,45 @@
  
  <mapper namespace="com.yoojung0318.puppyplay.post.monthly.dao.MonthlyDAO">
  
-<insert id="insertMonthly" parameterType="map">
-		INSERT INTO
-					`monthly`
-		(
-					`userId`
-					, `title`
-					, `date`
-					, `createdAt`
-					, `updatedAt`
-		)
-		VALUES			
-		(
-					#{userId}
-					, #{title}
-					, #{date}
-					, now()
-					, now()
-		)
-</insert>
+	<insert id="insertMonthly" parameterType="map">
+			INSERT INTO
+						`monthly`
+			(
+						`userId`
+						, `title`
+						, `start`
+						, `end`
+						, `createdAt`
+						, `updatedAt`
+			)
+			VALUES			
+			(
+						#{userId}
+						, #{title}
+						, #{start}
+						, #{end}
+						, now()
+						, now()
+			)
+	</insert>
  
- 
+	 <select id="selectMonthly" parameterType="map"
+	 resultType="com.yoojung0318.puppyplay.post.monthly.model.Monthly">
+	 	
+	 		SELECT 
+						`userId`
+						, `title`
+						, `start`
+						, `end`
+						, `createdAt`
+						, `updatedAt``
+	 		FROM 	
+	 					`calendar`
+	 		WHERE
+	 				`userId` = #{userId}
+	 		AND		`title` = #{title}	
+	 			`		
+	 </select>
+	 
+	 
  </mapper>

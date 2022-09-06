@@ -21,7 +21,7 @@
  		<!-- monthly-logo -->
  			<div class="monthly-logo col-12 d-flex justify-content-center align-items-between ">
  				<div class="monthly-logo-text col-4">
- 					<h1 class="text-center mt-2">Monthly</h1>
+ 					<h1 class="text-center mt-2">Notice</h1>
  				</div>
  				<div>
  					<img src="/static/picture/puppy4.jpg" class= "puppy4 ml-5"/>
@@ -40,13 +40,13 @@
  			<tbody>
  				<tr>
  					<td>001</td>
- 					<td>9월 일정 입니다.</td>
+ 					<td>홈페이지 오픈 안내</td>
  					<td>관리자</td>
  					<td>2022/08/24</td>
  				</tr>
 	 			<tr>
-	 					<td>001</td>
-	 					<td>9월 일정 입니다.</td>
+	 					<td>002</td>
+	 					<td>주차 안내 입니다.</td>
 	 					<td>관리자</td>
 	 					<td>2022/08/24</td>
 	 				</tr>

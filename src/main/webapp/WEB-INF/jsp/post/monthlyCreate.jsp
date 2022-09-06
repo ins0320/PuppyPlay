@@ -21,6 +21,7 @@
   <!-- fullcalendar 언어 CDN --> 
  <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.8.0/locales-all.min.js'></script>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
  
  <!-- fullCalanser style-->
  <style> 
@@ -59,139 +60,63 @@
 	
 	<script>
  
-        var calendar = null;
-        var initialLocaleCode = 'ko';
-        var localeSelectorEl = document.getElementById('locale-selector');
- 
-            $(document).ready(function (){
- 
-                    var calendarEl = document.getElementById('calendar');
-                    calendar = new FullCalendar.Calendar(calendarEl, {
-                    	height: '500px', 
-                    	initialDate: '2022-02-07',
-                        initialView: 'timeGridWeek',
+	(function(){  
+		$(function(){     
+			// calendar element 취득   
+			var calendarEl = $('#calendar')[0];    
+			// full-calendar 생성하기  
+			var calendar = new FullCalendar.Calendar(calendarEl, {     
+				height: '500px', // calendar 높이 설정    
+				expandRows: true, // 화면에 맞게 높이 재설정
+				slotMinTime: '09:00', // Day 캘린더에서 시작 시간 
+				slotMaxTime: '18:00', // Day 캘린더에서 종료 시간
+		
                         headerToolbar: {
                             left: 'prev,next today',
                             center: 'title',
                             right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek'
                         },
-                        navLinks: true,
-                        editable: true,
-                        selectable: true,// 화면에 맞게 높이 재설정
-                        expandRows: true,
+                        initialView: 'dayGridMonth', // 초기 로드 될때 보이는 캘린더 화면(기본 설정: 달) 
+                        initialDate: '2022-09-06', // 초기 날짜 설정 (설정하지 않으면 오늘 날짜가 보인다.)
+                        dayMaxEvents: true, // 이벤트가 오버되면 높이 제한 (+ 몇 개식으로 표현)
+                        selectable: true,// 달력 일자 드래그 설정가능
+                        expandRows: true,// 화면에 맞게 높이 재설정
                         droppable: true, // this allows things to be dropped onto the calendar
- 
-                        // eventAdd: function () { // 이벤트가 추가되면 발생하는 이벤트
-                        //     // console.log()
-                        // },
- 
-                        /**
-                         * 드래그로 이벤트 수정하기
-                         */
-                        eventDrop: function (info){
-                            console.log(info);
-                            if(confirm("'"+ info.event.title +"' 매니저의 일정을 수정하시겠습니까 ?")){
-                            }
-                            var events = new Array(); // Json 데이터를 받기 위한 배열 선언
-                            var obj = new Object();
- 
-                            obj.title = info.event._def.title;
-                            obj.start = info.event._instance.range.start;
-                            obj.end = info.event._instance.range.end;
-                            events.push(obj);
- 
-                            console.log(events);
-                            $(function deleteData() {
-                                $.ajax({
-                                    url: "/full-calendar/calendar-admin-update",
-                                    method: "PATCH",
-                                    dataType: "json",
-                                    data: JSON.stringify(events),
-                                    contentType: 'application/json',
-                                })
-                            })
-                        },
- 
-                        /**
-                         * 드래그로 이벤트 추가하기
-                         */
-                         elect: function (arg) { // 캘린더에서 이벤트를 생성할 수 있다.
-                        	 
-                             var title = prompt('일정을 입력해주세요.');
-                             if (title) {
-                                 calendar.addEvent({
-                                     title: title,
-                                     start: arg.start,
-                                     end: arg.end,
-                                     allDay: arg.allDay,
-                                 })
-                             }
-  
-                             var events = new Array(); // Json 데이터를 받기 위한 배열 선언
-                                 var obj = new Object();     // Json 을 담기 위해 Object 선언
-  
-                                 obj.title = title; // 이벤트 명칭  ConsoleLog 로 확인 가능.
-                                 obj.start = arg.start; // 시작
-                                 obj.end = arg.end; // 끝
-                                 events.push(obj);
-  
-                             var jsondata = JSON.stringify(events);
-                             console.log(jsondata);
-  
-                             $(function saveData(jsondata) {
-                                 $.ajax({
-                                     url: "/full-calendar/calendar-admin-update",
-                                     method: "POST",
-                                     dataType: "json",
-                                     data: JSON.stringify(events),
-                                     contentType: 'application/json',
-                                 })
-                                     .done(function (result) {
-                                         // alert(result);
-                                     })
-                                     .fail(function (request, status, error) {
-                                          // alert("에러 발생" + error);
-                                     });
-                                 calendar.unselect()
-                             });
-                         },
- 
-                        /**
-                         * 이벤트 선택해서 삭제하기
-                         */
-                        eventClick: function (info){
-                            if(confirm("'"+ info.event.title +"' 매니저의 일정을 삭제하시겠습니까 ?")){
-                                // 확인 클릭 시
-                                info.event.remove();
-                            }
- 
-                            console.log(info.event);
-                            var events = new Array(); // Json 데이터를 받기 위한 배열 선언
-                            var obj = new Object();
-                                obj.title = info.event._def.title;
-                                obj.start = info.event._instance.range.start;
-                                events.push(obj);
- 
-                            console.log(events);
-                            $(function deleteData(){
-                                $.ajax({
-                                    url: "/full-calendar/calendar-admin-update",
-                                    method: "DELETE",
-                                    dataType: "json",
-                                    data: JSON.stringify(events),
-                                    contentType: 'application/json',
-                                })
-                            })
-                        },
-                        // eventRemove: function (obj) { // 이벤트가 삭제되면 발생하는 이벤트
-                        //
-                        // },
+                        locale: 'ko',
                         
+                        eventAdd: function(obj) { // 이벤트가 추가되면 발생하는 이벤트      
+                        	console.log(obj);      
+                        },      
+                        eventRemove: function(obj){ // 이벤트가 삭제되면 발생하는 이벤트    
+                        	console.log(obj);    
+                        },     
+                        select: function(arg) { // 캘린더에서 드래그로 이벤트를 생성할 수 있다.  
+                        	var title = prompt('Event Title:');   
+                        	if (title) {  
+                        		calendar.addEvent({    
+                        			title: title,     
+                        			start: arg.start,     
+                        			end: arg.end            
+                        		})         
+                        	}   
+                        	calendar.unselect()  
+                        }
+                   		,events: [        
+                   			{    
+                   				title: '야영',   
+                   				start: '2022-09-01',   
+                   			},   
+                   			{         
+                   				title: 'Long Event',     
+                   				start: '2022-09-15',  
+                   				end: '2022-09-16'     
+                   			},         
+                   		]
                     });
-                    calendar.render();
-        });
- 
- 
+                 // 캘린더 랜더링  
+                 calendar.render();
+            });
+        })();
 </script>
 </body>		
 </html>

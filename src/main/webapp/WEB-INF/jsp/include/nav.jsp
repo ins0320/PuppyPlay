@@ -6,17 +6,9 @@
 			<li class="nav-item "><a href="/post/main/view" class="nav-link nav-text">Home</a></li>
 			<li class="nav-item "><a href="/post/monthly/list/view" class="nav-link nav-text">이달의일정</a></li>
 			<li class="nav-item "><a href="/post/today/view" class="nav-link nav-text ">오늘의일정</a></li>
-			<li class="nav-item "><a href="#" class="nav-link nav-text">공지사항</a></li>
+			<li class="nav-item "><a href="/post/notice/list/view" class="nav-link nav-text">공지사항</a></li>
 			<li class="nav-item "><a href="#" class="nav-link nav-text">Q&A</a></li>
 		</ul>
 	</nav>
 	
 	
-		<%--   
-		<c:choose test="${userId eq 'admin'}">
-			location.href="/post/monthlyCreate.jsp";
-		</c:choose>
-		<c:otherwise>
-			location.href="/post/monthlyList.jsp";
-		</c:otherwise>
-		--%> 	
