@@ -28,6 +28,7 @@ import com.yoojung0318.puppyplay.post.notice.bo.NoticeBO;
 	
 		HttpSession session =request.getSession();
 		int userId = (Integer) session.getAttribute("userId");
+		String loginId = (String) session.getAttribute("loginId");
 		
 		int count = noticeBO.addNotice(userId, title, content);
 		

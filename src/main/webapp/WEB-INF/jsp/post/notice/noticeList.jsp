@@ -51,7 +51,7 @@
  			</tbody>	
  		</table>
 		<!-- 관리자만 보이는 작성하기 버튼(create로 이동) -->
-		<c:if test="${userId eq 1 }">
+		<c:if test="${loginId eq 'adimn' }">
 			<div class="d-flex justify-content-end">
 	 				<a href="/post/notice/create/view" class="btn btn-info">작성하기</a>
 	 		</div>

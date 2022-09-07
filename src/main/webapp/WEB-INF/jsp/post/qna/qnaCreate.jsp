@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>공지사항 작성</title>
+<title>qna 작성</title>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
@@ -21,7 +21,7 @@
  		<!-- notice-logo -->
  			<div class="monthly-logo col-12 d-flex justify-content-center align-items-between ">
  				<div class="monthly-logo-text col-4">
- 					<h1 class="text-center mt-2">Notice</h1>
+ 					<h1 class="text-center mt-2">Q&A</h1>
  				</div>
  			</div>
  		<!--  /notice-logo -->	

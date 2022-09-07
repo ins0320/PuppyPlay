@@ -52,5 +52,19 @@
 	
 	</select>
 	
+	<select id="selectUserById" parameterType="int"
+	resultType="com.yoojung0318.puppyplay.user.model.User">
+	SELECT
+				`loginId`
+				, `password`
+				, `name`
+				, `email`
+				, `createdAt`
+				, `updatedAt`
+	 	FROM
+	 			`user`	
+		WHERE
+	 			`id` = #{id}
 	
+	</select>
 </mapper> 
