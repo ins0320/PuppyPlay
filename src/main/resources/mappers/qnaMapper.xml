@@ -7,7 +7,7 @@
  		INSERT INTO
  					`qna`
  		(
- 					,`userId`
+ 					`userId`
  					,`title`
  					,`content`
  					,`answer`
@@ -25,4 +25,37 @@
  		)				
  	</insert>
  
+ 	<select id="selectQnaList" parameterType="map"
+ 	resultType="com.yoojung0318.puppyplay.post.qna.model.Qna">
+ 		SELECT
+ 				`id`
+ 				,`userId`
+ 				,`title`
+ 				,`content`
+ 				,`answer`
+				,createdAt
+				,updatedAt
+ 		FROM
+				`qna`
+				 	
+ 	
+ 	</select>
+ 	
+ 	<select id="selectQna" parameterType="int"
+ 	resultType="com.yoojung0318.puppyplay.post.qna.model.Qna">
+ 		SELECT
+ 				`id`
+ 				,`userId`
+ 				,`title`
+ 				,`content`
+ 				,`answer`
+				,createdAt
+				,updatedAt
+ 		FROM
+				`qna`
+		WHERE
+				`id` = #{id}		
+ 			
+ 	
+ 	</select>
  </mapper>

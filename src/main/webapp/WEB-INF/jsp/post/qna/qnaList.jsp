@@ -42,14 +42,20 @@
  			<tbody> 		
  			<c:forEach var="qna" items="${qnaList}">
  				<tr>
- 					<td>${qna.id }</td>
- 					<td><a href="/post/notice/detail/view?id=${qna.id}">${qna.title }</a></td>
- 					<td>관리자</td>
+ 					<td>${qna.id}</td>
+ 					<td><a href="/post/qna/detail/view?id=${qna.id}">${qna.title }</a></td>
+ 					<td>${userLoginId}</td>
  					<td><fmt:formatDate value="${qna.createdAt}" pattern="yyyy-MM-dd"/></td>
  				</tr>
 	 		</c:forEach>		
  			</tbody>	
  		</table>
+ 		<!-- 관리자만 접근 가능한 작성하기 버튼 (클릭시, qna/create로 넘거감) -->
+ 		<div class="d-flex justify-content-end mt-2">
+	 		<c:if test="${userLoginId eq 'admin' }">
+	 			<a href="/post/qna/create/view" class="btn btn-info">작성하기</a>
+	 		</c:if>
+ 		</div>
  		</section>
  		<c:import url="/WEB-INF/jsp/include/footer.jsp"/>
  	</div>

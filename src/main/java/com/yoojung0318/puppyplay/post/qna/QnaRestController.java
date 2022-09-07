@@ -19,7 +19,7 @@ public class QnaRestController {
 	@Autowired 
 	private QnaBO qnaBO;
 	
-	@PostMapping("/post/qna/member/create")
+	@PostMapping("/post/qna/create")
 	public Map<String, String> createQna(
 			@RequestParam("title") String title
 			,@RequestParam("content") String content

@@ -33,7 +33,7 @@
  			<hr class="hr-solid">
  			<div class="mt-4 p-4"><pre>${qna.content}<pre></div>
  			<div class="d-flex justify-content-end">
-	 			<a href="/post/notice/list/view" class="btn btn-info">목록으로</a>
+	 			<a href="/post/qna/list/view" class="btn btn-info">목록으로</a>
  			</div>
  		</section>
  		<c:import url="/WEB-INF/jsp/include/footer.jsp"/>

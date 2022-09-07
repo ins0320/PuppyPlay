@@ -18,22 +18,28 @@
  	<div class="wrap">
  		<c:import url="/WEB-INF/jsp/include/header.jsp"/>
  		<section>
- 		<!-- notice-logo -->
+ 			<!-- notice-logo -->
  			<div class="monthly-logo col-12 d-flex justify-content-center align-items-between ">
  				<div class="monthly-logo-text col-4">
  					<h1 class="text-center mt-2">Q&A</h1>
  				</div>
  			</div>
- 		<!--  /notice-logo -->	
+ 			<!--  /notice-logo -->	
  			<hr class="mt-3">
  			<div class="d-flex">
  				<label><h2>제목:</h2></label>
- 				<input type="text" class="form-control col-10 ml-3" id="titleInput">
+ 				<input type="text" class="form-control col-11 ml-3" id="titleInput">
  			</div>
- 			<textarea rows="5" class="form-control mt-2" id="contentInput"></textarea>
+ 			<textarea rows="5" class="form-control mt-2 ml-2" id="contentInput"></textarea>
  			
- 			<div class="d-flex justify-content-end">
-	 			<a href="/post/notice/list/view" class="btn btn-info">목록으로</a>
+ 			<!-- 답글 작성 form (관리자만 접근 가능) -->
+ 			<c:if test="${userLoginId eq 'admin' }">
+ 				<textarea rows="5" class="form-control ml-2 mt-5" id="answerInput"></textarea>
+ 			</c:if>
+ 			<!-- /답글 작성 form (관리자만 접근 가능) -->
+ 			
+ 			<div class="d-flex justify-content-end mt-2">
+	 			<a href="/post/qna/list/view" class="btn btn-info">목록으로</a>
 	 			<button type="button" class="btn btn-info" id="saveBtn">저장</button>
  			</div>
  		</section>
@@ -46,6 +52,7 @@
  			
  			let title = $("#titleInput").val();
  			let content = $("#contentInput").val();
+ 			let answer = $("#answerInput").val();
  			
  			if(title == ""){
 				alert("제목을 입력하세요");
@@ -55,23 +62,22 @@
 				alert("내용을 입력하세요");
 				return;
 			} 
-		
-			
+				
 	 		//api 호출
 	 		$.ajax({
 	 			type:"post",
-	 			url:"/post/notice/create",
-	 			data:{"title":title, "content":content},
+	 			url:"/post/qna/create",
+	 			data:{"title":title, "content":content, "answer":answer},
 	 			success:function(data){
 					if(data.result == "success"){
-						location.href ="/post/notice/list/view";
+						location.href ="/post/qna/list/view";
 					}else{
-						alert("공지작성 실패");
+						alert("Q&A 작성 실패");
 					}
 				},
 				error:function(){
 					
-					alert("공지작성 에러");
+					alert("Q&A 작성 에러");
 				}	
 	 		});
  			

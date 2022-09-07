@@ -37,6 +37,7 @@
 		 			<th>글쓴이</th>
 		 			<th>날짜</th>
  				</tr>
+ 			</thead>
  			<tbody>
  			<c:forEach va="notice" items="${noticeList}">
  				<tr>
