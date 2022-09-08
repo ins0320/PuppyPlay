@@ -143,7 +143,13 @@ a:hover   {
 .header{
 	font-size:15px;
 }
-.calendar
+
+/*qna*/
+.insertbox { 
+	border:3px solid; 
+	padding:10px; 
+	 
+	}
 
 footer {
 	height:50px;

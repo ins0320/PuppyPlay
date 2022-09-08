@@ -26,6 +26,13 @@ public class QnaController {
 		return "post/qna/qnaCreate";
 	};
 	
+	//qna 댓글 작성
+	@GetMapping("/post/qna/reply/create/view")
+	public String qnaReplyCreate() {
+		return "post/qna/qnaRepeatCreate";
+	}
+	
+	
 	//qna 리스트
 	@GetMapping("/post/qna/list/view")
 	public String qnaList(
@@ -39,6 +46,8 @@ public class QnaController {
 		
 		return "post/qna/qnaList";
 	};
+	
+
 	
 	//qna 작성글 확인
 	@GetMapping("/post/qna/detail/view")

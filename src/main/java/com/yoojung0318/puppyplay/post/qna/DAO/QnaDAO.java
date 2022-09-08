@@ -16,6 +16,7 @@ public interface QnaDAO {
 			,@Param("content") String content
 			,@Param("answer") String answer);
 	
+	
 	public List<Qna> selectQnaList();
 	
 	public Qna selectQna(int id);

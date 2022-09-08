@@ -50,11 +50,9 @@
 	 		</c:forEach>		
  			</tbody>	
  		</table>
- 		<!-- 관리자만 접근 가능한 작성하기 버튼 (클릭시, qna/create로 넘거감) -->
+ 		<!--작성하기 버튼 (클릭시, qna/create로 넘거감) -->
  		<div class="d-flex justify-content-end mt-2">
-	 		<c:if test="${userLoginId eq 'admin' }">
 	 			<a href="/post/qna/create/view" class="btn btn-info">작성하기</a>
-	 		</c:if>
  		</div>
  		</section>
  		<c:import url="/WEB-INF/jsp/include/footer.jsp"/>

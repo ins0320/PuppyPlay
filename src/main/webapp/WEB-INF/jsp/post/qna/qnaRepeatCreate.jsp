@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>qna</title>
+<title>qna 작성</title>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
@@ -18,43 +18,79 @@
  	<div class="wrap">
  		<c:import url="/WEB-INF/jsp/include/header.jsp"/>
  		<section>
- 		<!-- notice-logo -->
+ 			<!-- notice-logo -->
  			<div class="monthly-logo col-12 d-flex justify-content-center align-items-between ">
  				<div class="monthly-logo-text col-4">
  					<h1 class="text-center mt-2">Q&A</h1>
  				</div>
  			</div>
- 		<!--  /notice-logo -->	
+ 			<!--  /notice-logo -->	
  			<hr class="mt-3">
- 			<div class="d-flex">
+ 			<!-- 제목 불러오기 -->
+ 		<div class="d-flex">
  				<label><h2>제목:</h2></label>
  				<h2 class="ml-3">${qna.title}</h2>
  			</div>
- 			
- 			<hr class="hr-solid">
- 			<!-- 글 ( 두개 나란히 하고싶은데 어떻게?)-->
+ 			<!-- /제목 불러오기 -->
+ 			<!-- 글 불러오기 -->
+ 			<div class="mt-4 p-4"><pre>${qna.content}<pre></div>
+ 			<!-- /글 불러오기 -->
+ 			<!--  답글 작성하기 -->
  			<div>
-	 			<!-- 작성한 글 -->
-	 			<div class="mt-4 p-4 col-7" ><pre>${qna.content}<pre></div>
-	 			<hr class="hr-solid">
-	 			
-	 			<!-- 댓글  -->
-	 			<c:if test="${qna.answer eq null}">
-	 				<div id="answernull" style ="display:none"></div>
-	 			</c:if>
-	 			<div class="answernull">
-	 				다음은 답변내용입니다.
-	 				 <hr>
-	 			</div>
-	 			<div class="mt-4 p-4 col-7"><pre>${qna.answer}</pre></div>
-	 		</div>	
-	 		<!-- /글 -->
- 			<!-- button -->
- 			<div class="d-flex justify-content-end">
+ 					<textarea rows="5" class="form-control ml-2 mt-5" id="answerInput"></textarea>
+ 				</div>
+ 			<!-- /답글 작성하기 -->
+ 			
+ 			<div class="d-flex justify-content-end mt-2">
 	 			<a href="/post/qna/list/view" class="btn btn-info">목록으로</a>
+	 			<button type="button" class="btn btn-info" id="saveBtn">저장</button>
  			</div>
  		</section>
  		<c:import url="/WEB-INF/jsp/include/footer.jsp"/>
  </div>
+ 
+ 	<script>
+ 	$(document).ready(function(){
+ 		$("#saveBtn").on("click",function(){
+ 			
+ 			let title = $("#titleInput").val();
+ 			let content = $("#contentInput").val();
+ 			let answer = $("#answerInput").val();
+ 			
+ 			if(title == ""){
+				alert("제목을 입력하세요");
+				return;
+			} 
+			if(content == ""){
+				alert("내용을 입력하세요");
+				return;
+			} 
+				
+	 		//api 호출
+	 		$.ajax({
+	 			type:"post",
+	 			url:"/post/qna/create",
+	 			data:{"title":title, "content":content, "answer":answer},
+	 			success:function(data){
+					if(data.result == "success"){
+						location.href ="/post/qna/list/view";
+					}else{
+						alert("Q&A 작성 실패");
+					}
+				},
+				error:function(){
+					
+					alert("Q&A 작성 에러");
+				}	
+	 		});
+ 			
+ 			
+ 		});
+ 		
+ 		
+ 	});
+ 	
+ 	
+ 	</script>
 </body>
 </html>		

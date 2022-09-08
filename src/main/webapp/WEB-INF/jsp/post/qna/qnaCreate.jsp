@@ -33,9 +33,14 @@
  			<textarea rows="5" class="form-control mt-2 ml-2" id="contentInput"></textarea>
  			
  			<!-- 답글 작성 form (관리자만 접근 가능) -->
- 			<c:if test="${userLoginId eq 'admin' }">
- 				<textarea rows="5" class="form-control ml-2 mt-5" id="answerInput"></textarea>
- 			</c:if>
+ 			<c:choose>
+ 				<c:when test="${userLoginId eq 'admin' }">
+ 					<textarea rows="5" class="form-control ml-2 mt-3" id="answerInput"></textarea>
+ 				</c:when>
+ 				<c:otherwise>
+ 					<div id="answerInput" style ="display:none"></div>
+ 				</c:otherwise>	
+ 			</c:choose>
  			<!-- /답글 작성 form (관리자만 접근 가능) -->
  			
  			<div class="d-flex justify-content-end mt-2">
