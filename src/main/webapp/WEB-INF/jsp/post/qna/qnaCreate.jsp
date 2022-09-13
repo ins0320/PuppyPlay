@@ -26,11 +26,17 @@
  			</div>
  			<!--  /notice-logo -->	
  			<hr class="mt-3">
+ 	
+ 			<!-- user content -->
  			<div class="d-flex">
  				<label><h2>제목:</h2></label>
  				<input type="text" class="form-control col-11 ml-3" id="titleInput">
  			</div>
  			<textarea rows="5" class="form-control mt-2 ml-2" id="contentInput"></textarea>
+ 			<!-- /user content -->
+ 			
+ 			
+ 			
  			
  			<!-- 답글 작성 form (관리자만 접근 가능) -->
  			<c:choose>

@@ -32,25 +32,19 @@
  			</div>
  			
  			<hr class="hr-solid">
- 			<!-- 글 ( 두개 나란히 하고싶은데 어떻게?)-->
+ 			
  			<div>
 	 			<!-- 작성한 글 -->
 	 			<div class="mt-4 p-4 col-7" > <pre>${qna.content}<pre> </div>
 	 			<hr class="hr-solid">
 	 			
-	 			<!-- 댓글  -->
-	 			<c:if test="${qna.answer eq null}">
-	 				<div id="answernull" style ="display:none"></div>		
-		 			<div class="answernull">
-		 				다음은 답변내용입니다.
-		 				 <hr>
-		 			</div>
-	 			</c:if>
+	 			<!--  작성한 답글 -->
 	 			<div class="mt-4 p-4 col-7"><pre>${qna.answer}</pre></div>
 	 		</div>	
 	 		<!-- /글 -->
  			<!-- button -->
  			<div class="d-flex justify-content-end">
+ 				<a href="/post/qna/create/view" class="btn btn-info">작성하기</a>
 	 			<a href="/post/qna/list/view" class="btn btn-info">목록으로</a>
  			</div>
  		</section>
