@@ -24,6 +24,16 @@
  				,now()	
  		)				
  	</insert>
+ 	
+ 	<update id="updateQna" parameterType="map">
+ 		UPDATE
+ 			`qna`
+ 		SET
+ 			  `answer` = #{answer}
+ 			  ,updatedAt = now()
+ 		WHERE
+			`id` = #{id}
+ 	</update>
  
  	<select id="selectQnaList" parameterType="map"
  	resultType="com.yoojung0318.puppyplay.post.qna.model.Qna">

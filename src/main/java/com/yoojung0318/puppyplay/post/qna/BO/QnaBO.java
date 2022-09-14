@@ -14,11 +14,15 @@ public class QnaBO {
 	@Autowired
 	private	QnaDAO qnaDAO;
 	
-	//qna작성
+	//qna 작성
 	public int addQna(int userId, String title, String content, String answer){
 		return qnaDAO.insertQna(userId, title, content,answer);
 	};
 	
+	//qna 답글작성(update)
+	public int replyQna(int id, String answer) {
+		return qnaDAO.updateQna(id, answer);
+	}
 	//qna 리스트
 	public List<Qna> getQnaList(){
 		return qnaDAO.selectQnaList();

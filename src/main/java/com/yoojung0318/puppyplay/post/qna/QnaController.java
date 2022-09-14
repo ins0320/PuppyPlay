@@ -49,7 +49,8 @@ public class QnaController {
 	
 
 	
-	//qna 작성글 확인
+	//qna 세부 페이지
+	// post의 id를 전달방고, id에 해당하는  qna를 조회하여, model에 추가한다.
 	@GetMapping("/post/qna/detail/view")
 	public String qnadetail(@RequestParam("id") int id, Model model) {
 		

@@ -42,5 +42,20 @@ public class QnaRestController {
 			return result;
 			
 	}
-	
+	@PostMapping("/post/qna/reply")
+	public Map<String, String> createReplyQna(
+			@RequestParam("id") int id
+			,@RequestParam("answer")String answer){
+		
+			int count = qnaBO.replyQna(id, answer);
+			
+			Map<String, String> map = new HashMap<>();
+			if(count == 1) {
+				map.put("result", "success");
+			}else {
+				map.put("result", "fail");
+			}
+			return map;
+		
+	};
 }

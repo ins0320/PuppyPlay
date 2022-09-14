@@ -26,29 +26,73 @@
  			</div>
  		<!--  /notice-logo -->	
  			<hr class="mt-3">
- 			<div class="d-flex">
- 				<label><h2>제목:</h2></label>
- 				<h2 class="ml-3">${qna.title}</h2>
- 			</div>
- 			
- 			<hr class="hr-solid">
- 			
+ 			<!-- 피드 -->
  			<div>
-	 			<!-- 작성한 글 -->
-	 			<div class="mt-4 p-4 col-7" > <pre>${qna.content}<pre> </div>
+ 				<!-- 제목 -->
+	 			<div class="d-flex">
+	 				<label><h2>제목:</h2></label>
+	 				<div id="titleInput">
+	 					<h2 class="ml-3">${qna.title}</h2>
+	 				</div>
+	 			</div>
+	 			<!-- /제목 -->
 	 			<hr class="hr-solid">
-	 			
-	 			<!--  작성한 답글 -->
-	 			<div class="mt-4 p-4 col-7"><pre>${qna.answer}</pre></div>
-	 		</div>	
-	 		<!-- /글 -->
+	 			<!-- 글 -->
+	 			<div>
+		 			<!-- 작성한 글 -->
+		 			<div class="mt-4 p-4 col-7" id="contentInput" > <pre>${qna.content}<pre> </div>
+		 			<hr class="hr-solid">
+		 			<!--  작성한 답글 (관리자만)-->
+		 			<c:if test="${userLoginId eq 'admin'}">
+		 				<textarea rows="7" class="form-control mt-4" id="answerInput"></textarea>
+		 			</c:if>
+		 		</div>
+		 		<!-- /글 -->	
+		 	</div>	
+	 		<!-- /피드 -->
+	 		
  			<!-- button -->
  			<div class="d-flex justify-content-end">
- 				<a href="/post/qna/create/view" class="btn btn-info">작성하기</a>
+ 				<c:if test="${userLoginId eq 'admin'}">
+ 					<button type="button" class="btn btn-info" data-post-id="${qna.id}" id="saveBtn">저장하기</button>
+	 			</c:if>
 	 			<a href="/post/qna/list/view" class="btn btn-info">목록으로</a>
  			</div>
  		</section>
  		<c:import url="/WEB-INF/jsp/include/footer.jsp"/>
  </div>
+ 		<script>
+		$(document).ready(function(){
+		
+			$("#saveBtn").on("click",function(){
+				
+				let id = $(this).data("post-id");
+				let answer = $("#answerInput").val();
+				
+				if(answer=""){
+					alert("답변을 입력하세요");
+					return;
+				}
+				
+				$.ajax({
+					type:"post",
+					url:"/post/qna/reply",
+					data:{"id":id,"answer":answer},
+					success:function(data){
+						if(data.result == "success"){
+							location.href="/post/qna/detail/view";
+						}else{
+							alret("답글저장실패");
+						}
+					},
+					error:function(){
+						alert("답글저장에러");
+					}
+				});
+			});
+		
+		
+		}); 
+		</script>
 </body>
 </html>		
