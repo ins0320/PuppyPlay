@@ -53,20 +53,21 @@
 	 		
  			<!-- button -->
  			<div class="d-flex justify-content-end">
- 				<c:if test="${userLoginId eq 'admin'}">
+ 				<!--<c:if test="${userLoginId eq 'admin'}">
  					<button type="button" class="btn btn-info" data-post-id="${qna.id}" id="saveBtn">저장하기</button>
-	 			</c:if>
+	 			</c:if>-->
 	 			<a href="/post/qna/list/view" class="btn btn-info">목록으로</a>
  			</div>
  		</section>
  		<c:import url="/WEB-INF/jsp/include/footer.jsp"/>
  </div>
+ 		<!--  
  		<script>
 		$(document).ready(function(){
 		
 			$("#saveBtn").on("click",function(){
 				
-				let id = $(this).data("post-id");
+				let postId = $(this).data("post-id");
 				let answer = $("#answerInput").val();
 				
 				if(answer=""){
@@ -77,7 +78,7 @@
 				$.ajax({
 					type:"post",
 					url:"/post/qna/reply",
-					data:{"id":id,"answer":answer},
+					data:{"postId":postId,"answer":answer},
 					success:function(data){
 						if(data.result == "success"){
 							location.href="/post/qna/detail/view";
@@ -93,6 +94,6 @@
 		
 		
 		}); 
-		</script>
+		</script> -->
 </body>
 </html>		

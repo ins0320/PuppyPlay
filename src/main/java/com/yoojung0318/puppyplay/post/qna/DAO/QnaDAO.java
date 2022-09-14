@@ -16,9 +16,11 @@ public interface QnaDAO {
 			,@Param("content") String content
 			,@Param("answer") String answer);
 	
-	public int updateQna(
-			@Param("id") int id
-			,@Param("answer") String answer);
+	/*public int updateQna(
+			@Param("postId") int postId
+			,@Param("title")  String title
+			,@Param("content") String content
+			,@Param("answer") String answer);*/
 	
 	public List<Qna> selectQnaList();
 	

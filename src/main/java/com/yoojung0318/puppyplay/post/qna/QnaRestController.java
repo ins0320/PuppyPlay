@@ -42,12 +42,12 @@ public class QnaRestController {
 			return result;
 			
 	}
-	@PostMapping("/post/qna/reply")
+	/*@PostMapping("/post/qna/reply")
 	public Map<String, String> createReplyQna(
-			@RequestParam("id") int id
+			@RequestParam("postId") int postId
 			,@RequestParam("answer")String answer){
 		
-			int count = qnaBO.replyQna(id, answer);
+			int count = qnaBO.replyQna(postId, answer);
 			
 			Map<String, String> map = new HashMap<>();
 			if(count == 1) {
@@ -57,5 +57,5 @@ public class QnaRestController {
 			}
 			return map;
 		
-	};
+	};*/
 }
