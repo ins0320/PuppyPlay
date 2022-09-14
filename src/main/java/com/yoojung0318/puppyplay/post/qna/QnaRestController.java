@@ -42,7 +42,7 @@ public class QnaRestController {
 			return result;
 			
 	}
-	/*@PostMapping("/post/qna/reply")
+	@PostMapping("/post/qna/reply")
 	public Map<String, String> createReplyQna(
 			@RequestParam("postId") int postId
 			,@RequestParam("answer")String answer){
@@ -57,5 +57,5 @@ public class QnaRestController {
 			}
 			return map;
 		
-	};*/
+	};
 }

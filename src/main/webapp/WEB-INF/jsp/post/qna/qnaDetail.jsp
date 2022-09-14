@@ -53,15 +53,15 @@
 	 		
  			<!-- button -->
  			<div class="d-flex justify-content-end">
- 				<!--<c:if test="${userLoginId eq 'admin'}">
+ 				<c:if test="${userLoginId eq 'admin'}">
  					<button type="button" class="btn btn-info" data-post-id="${qna.id}" id="saveBtn">저장하기</button>
-	 			</c:if>-->
+	 			</c:if>
 	 			<a href="/post/qna/list/view" class="btn btn-info">목록으로</a>
  			</div>
  		</section>
  		<c:import url="/WEB-INF/jsp/include/footer.jsp"/>
  </div>
- 		<!--  
+ 		  
  		<script>
 		$(document).ready(function(){
 		
@@ -94,6 +94,6 @@
 		
 		
 		}); 
-		</script> -->
+		</script> 
 </body>
 </html>		
