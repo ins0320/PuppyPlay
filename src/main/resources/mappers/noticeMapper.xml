@@ -25,6 +25,18 @@
  	)
  </insert>
  
+ <update id="updateNotice" parameterType="map">
+ 	UPDATE 
+ 			`notice`
+ 	SET
+ 			`title` = #{title}
+ 			, `content` = #{content}
+ 			, `updatedAt` = now()
+ 	WHERE				
+ 			`id` = #{postId}
+ 
+ </update>
+ 
  <select id="selectNoticeList" parameterType="map"
  resultType="com.yoojung0318.puppyplay.post.notice.model.Notice">
 

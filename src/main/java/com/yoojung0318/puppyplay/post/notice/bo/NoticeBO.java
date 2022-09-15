@@ -19,6 +19,11 @@ public class NoticeBO {
 		
 		return noticeDAO.insertNotice(userId,title, content);
 	}
+	
+	//공지 수정
+	public int updateNotice(int postId, String title, String content) {
+		return noticeDAO.updateNotice(postId, title, content);
+	}
 	// 공지 목록 조회
 	public List<Notice> getNoticeList(){
 		return noticeDAO.selectNoticeList();

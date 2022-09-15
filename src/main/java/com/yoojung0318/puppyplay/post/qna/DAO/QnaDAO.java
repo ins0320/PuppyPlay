@@ -17,6 +17,7 @@ public interface QnaDAO {
 			,@Param("answer") String answer);
 	
 	public int updateQna(
+			
 			@Param("postId") int postId
 			,@Param("answer") String answer);
 	

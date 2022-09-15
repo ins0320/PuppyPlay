@@ -16,6 +16,11 @@ public interface NoticeDAO {
 			,@Param("title") String title
 			,@Param("content") String content);
 	
+	public int updateNotice(
+			@Param("postId") int postId
+			,@Param("title") String title
+			,@Param("content")String content);
+	
 	public List<Notice> selectNoticeList();
 	
 	

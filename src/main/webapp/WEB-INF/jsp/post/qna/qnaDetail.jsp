@@ -65,7 +65,7 @@
  		<script>
 		$(document).ready(function(){
 		
-			$("#saveBtn").on("click",function(){
+			$("#saveBtn").on("click",function(){ 
 				
 				let postId = $(this).data("post-id");
 				let answer = $("#answerInput").val();

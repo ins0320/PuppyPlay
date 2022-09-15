@@ -27,16 +27,79 @@
  		<!--  /notice-logo -->	
  			<hr class="mt-3">
  			<div class="d-flex">
- 				<label><h2>제목:</h2></label>
- 				<h2 class="ml-3">${notice.title}</h2>
+ 				<label><h2>제목: </h2></label>
+ 					<!-- 관리자일 경우만 form 작성 가능 -->
+ 					<c:choose>
+	 					<c:when test="${userLoginId eq 'admin'}">
+	 						<h2><input type="text" class="form-control col-11 ml-3" id="titleInput" value="${notice.title}"></h2>		
+	 					</c:when>
+	 					
+	 					<c:otherwise>
+	 						<h2 class="ml-3">${notice.title}</h2>
+	 					</c:otherwise>
+ 					</c:choose>
  			</div>
  			<hr class="hr-solid">
- 			<div class="mt-4 p-4"><pre>${notice.content}<pre></div>
+ 			<!-- 관리자일 경우만 form 작성 가능 -->
+ 			<c:choose>
+ 				<c:when test="${userLoginId eq 'admin'}">
+ 					<textarea rows="5" class="form-control mt-2 col-11" id="contentInput">${notice.content}</textarea>
+ 				</c:when>
+ 				<c:otherwise>
+ 					<pre>${notice.content}</pre>
+ 				</c:otherwise>
+ 			</c:choose>	
+ 			
  			<div class="d-flex justify-content-end">
+ 				<c:if test="${userLoginId eq 'admin' }">
+ 					<button type="button" class="btn btn-info" id="saveBtn" data-post-id="${notice.id}">저장하기</button>
+	 			</c:if>
 	 			<a href="/post/notice/list/view" class="btn btn-info">목록으로</a>
  			</div>
  		</section>
  		<c:import url="/WEB-INF/jsp/include/footer.jsp"/>
  </div>
+ 	<script>
+	 	$(document).ready(function(){
+	 		
+	 		$("#saveBtn").on("click", function(){
+	 			let postId = $(this).data("post-id");
+		 		let title = $("#titleInput").val();
+		 		let content = $("#contentInput").val();
+		 		
+		 		
+		 		if(title == "") {
+					alert("제목을 입력하세요");
+					return;
+				} 
+				
+				if(content == "") {
+					alert("내용을 입력하세요");
+					return ;
+				}
+				
+				$.ajax({
+					type:"post",
+					url:"/post/notice/update",
+					data:{"postId":postId, "title":title, "content":content},
+					success:function(data) {
+						if(data.result == "success") {
+							location.reload();
+						} else {
+							alert("수정실패");
+						}
+					},
+					error:function() {
+						alert("수정에러");
+					}
+				});
+	 			
+	 		});
+	 		
+	 		
+	 	});
+ 	
+ 	
+ 	</script>
 </body>
 </html>		

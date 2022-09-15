@@ -42,4 +42,21 @@ import com.yoojung0318.puppyplay.post.notice.bo.NoticeBO;
 		return result;
 	};
 	
+	//공지사항 수정
+	@PostMapping("/post/notice/update")
+	public Map<String, String> upcateNotice(
+			@RequestParam("postId") int postId
+			,@RequestParam("title") String title
+			,@RequestParam("content") String content){
+		
+		int count = noticeBO.updateNotice(postId, title, content);
+		
+		Map<String, String> map = new HashMap<>();
+		if(count == 1) {
+			map.put("result", "success");
+		}else {
+			map.put("result", "fail");
+		}
+		return map;
+	}
 }
