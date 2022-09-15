@@ -32,24 +32,11 @@
  				<label><h2>제목:</h2></label>
  				<input type="text" class="form-control col-11 ml-3" id="titleInput">
  			</div>
- 			<textarea rows="5" class="form-control mt-2 ml-2" id="contentInput"></textarea>
- 			<!-- /user content -->
- 			
- 			
- 			
- 			
- 			<!-- 답글 작성 form (관리자만 접근 가능) -->
- 			<c:choose>
- 				<c:when test="${userLoginId eq 'admin' }">
- 					<textarea rows="5" class="form-control ml-2 mt-3" id="answerInput"></textarea>
- 				</c:when>
- 				<c:otherwise>
- 					<div id="answerInput" style ="display:none"></div>
- 				</c:otherwise>	
- 			</c:choose>
- 			<!-- /답글 작성 form (관리자만 접근 가능) -->
- 			
- 			<div class="d-flex justify-content-end mt-2">
+ 			<div class="d-flex justify-content-center">
+ 				<textarea rows="5" class="form-control mt-5 ml-5 col-11" id="contentInput"></textarea>
+ 			</div>
+ 			<!-- /user content -->		
+ 			<div class="d-flex justify-content-end mt-4">
 	 			<a href="/post/qna/list/view" class="btn btn-info">목록으로</a>
 	 			<button type="button" class="btn btn-info" id="saveBtn">저장</button>
  			</div>

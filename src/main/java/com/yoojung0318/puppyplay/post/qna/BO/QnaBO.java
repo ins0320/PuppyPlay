@@ -20,8 +20,8 @@ public class QnaBO {
 	};
 	
 	//qna 답글작성(update)
-		public int replyQna( int postId, String answer) {
-			return qnaDAO.updateQna( postId, answer);
+		public int replyQna( int postId, String title, String content, String answer) {
+			return qnaDAO.updateQna( postId, title, content, answer);
 		}
 	//qna 리스트
 	public List<Qna> getQnaList(){

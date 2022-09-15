@@ -28,9 +28,9 @@
  	<update id="updateQna" parameterType="map">
  		UPDATE
  			`qna`
- 		SET
- 			  `answer` = #{answer}
- 			  ,updatedAt = now()
+ 		SET	
+ 			 `answer` = #{answer}
+ 			 ,`updatedAt` = now()
  		WHERE
 			`id` = #{postId}
  	</update>
