@@ -30,10 +30,20 @@
  			<!-- user content -->
  			<div class="d-flex">
  				<label><h2>제목:</h2></label>
- 				<input type="text" class="form-control col-11 ml-3" id="titleInput">
+ 				<input type="text" class="form-control qna-title-form ml-3 col-10" id="titleInput">
  			</div>
- 			<div class="d-flex justify-content-center">
+ 			<div class="ml-5">
  				<textarea rows="5" class="form-control mt-5 ml-5 col-11" id="contentInput"></textarea>
+ 				<!-- 관리자만 답변 입력 폼 보이기 -->
+ 				<!--<c:choose>
+ 					<c:when test="${loginUserId eq 'admin' }">
+ 						<textarea rows="5" class="form-control mt-5 col-11 ml-5" id="answerInput"></textarea>
+ 					</c:when>
+ 					<c:otherwise>
+ 						
+ 					</c:otherwise>
+ 				</c:choose>-->
+ 				<textarea rows="5" class="form-control mt-5 ml-5 col-11" id="answerInput"></textarea>
  			</div>
  			<!-- /user content -->		
  			<div class="d-flex justify-content-end mt-4">

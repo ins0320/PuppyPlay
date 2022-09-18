@@ -51,7 +51,7 @@
 			 				${qna.answer}			 				
 			 			</c:otherwise>
 		 			</c:choose>
-		 			
+		 			<div class="mt-4 p-4 col-7" id="contentInput" > <pre>${qna.answer}<pre> </div>
 		 		</div>
 		 		<!-- /글 -->	
 		 	</div>	
