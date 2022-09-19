@@ -36,6 +36,7 @@
 		 			<th>글쓴이</th>
 		 			<th>날짜</th>
  				</tr>
+ 			</thead>	
  			<tbody> 		
  			<c:forEach var="qna" items="${qnaList}">
  				<tr>
@@ -44,7 +45,14 @@
  					<td>${qna.user.loginId}</td>
  					<td><fmt:formatDate value="${qna.qna.createdAt}" pattern="yyyy-MM-dd"/></td>
  				</tr>
-	 		</c:forEach>		
+ 		
+ 				<tr>
+ 					<td><a href="/post/qna/detail/view?id=${qna.qna.id}">Re)답변드립니다.</a></td>
+ 				</tr>
+ 		
+	 		</c:forEach>
+			
+	 				
  			</tbody>	
  		</table>
  		<!--작성하기 버튼 (클릭시, qna/create로 넘거감) -->
