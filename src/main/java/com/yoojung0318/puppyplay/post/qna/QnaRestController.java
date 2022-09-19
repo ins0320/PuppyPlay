@@ -23,13 +23,12 @@ public class QnaRestController {
 	public Map<String, String> createQna(
 			@RequestParam("title") String title
 			,@RequestParam("content") String content
-			,@RequestParam("answer") String answer
 			,HttpServletRequest request ){
 	
 			HttpSession session = request.getSession();
 			int userId = (Integer) session.getAttribute("userId");
 			
-			int count = qnaBO.addQna(userId,title,content,answer);
+			int count = qnaBO.addQna(userId,title,content);
 			
 			
 			Map<String, String> result = new HashMap<>();
@@ -45,11 +44,9 @@ public class QnaRestController {
 	@PostMapping("/post/qna/reply")
 	public Map<String, String> createReplyQna(
 			@RequestParam("postId") int postId
-			,@RequestParam("title") String title
-			,@RequestParam("content") String content
 			,@RequestParam("answer")String answer){
 		
-			int count = qnaBO.replyQna( postId,title,content, answer);
+			int count = qnaBO.replyQna( postId, answer);
 			
 			Map<String, String> map = new HashMap<>();
 			if(count == 1) {

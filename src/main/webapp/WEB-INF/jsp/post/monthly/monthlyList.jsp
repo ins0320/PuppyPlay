@@ -23,9 +23,6 @@
  				<div class="monthly-logo-text col-4">
  					<h1 class="text-center mt-2">Monthly</h1>
  				</div>
- 				<div>
- 					<img src="/static/picture/puppy4.jpg" class= "puppy4 ml-5"/>
- 				</div>
  			</div>
  		<!-- /monthly-logo -->
  		

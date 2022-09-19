@@ -35,15 +35,9 @@
  			<div class="ml-5">
  				<textarea rows="5" class="form-control mt-5 ml-5 col-11" id="contentInput"></textarea>
  				<!-- 관리자만 답변 입력 폼 보이기 -->
- 				<!--<c:choose>
- 					<c:when test="${loginUserId eq 'admin' }">
+ 					<c:if test="${loginUserId eq 'admin' }">
  						<textarea rows="5" class="form-control mt-5 col-11 ml-5" id="answerInput"></textarea>
- 					</c:when>
- 					<c:otherwise>
- 						
- 					</c:otherwise>
- 				</c:choose>-->
- 				<textarea rows="5" class="form-control mt-5 ml-5 col-11" id="answerInput"></textarea>
+ 					</c:if> 				
  			</div>
  			<!-- /user content -->		
  			<div class="d-flex justify-content-end mt-4">

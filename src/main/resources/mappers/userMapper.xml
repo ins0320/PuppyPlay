@@ -38,7 +38,8 @@
 	<select id="selectUser" parameterType="map"
 	resultType="com.yoojung0318.puppyplay.user.model.User">
 		SELECT
-				`loginId`
+				`id`
+				,`loginId`
 				, `password`
 				, `name`
 				, `email`
@@ -55,7 +56,8 @@
 	<select id="selectUserById" parameterType="int"
 	resultType="com.yoojung0318.puppyplay.user.model.User">
 	SELECT
-				`loginId`
+				`id`	
+				,`loginId`
 				, `password`
 				, `name`
 				, `email`

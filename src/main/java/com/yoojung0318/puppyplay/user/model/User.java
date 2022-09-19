@@ -9,7 +9,13 @@ public class User {
 	private String password;
 	private String name;
 	private String email;
-	private Date creteadAt;
+	private Date createdAt;
+	public Date getCreatedAt() {
+		return createdAt;
+	}
+	public void setCreatedAt(Date createdAt) {
+		this.createdAt = createdAt;
+	}
 	private Date updatedAt;
 	
 	public int getId() {
@@ -42,12 +48,7 @@ public class User {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public Date getCreteadAt() {
-		return creteadAt;
-	}
-	public void setCreteadAt(Date creteadAt) {
-		this.creteadAt = creteadAt;
-	}
+
 	public Date getUpdatedAt() {
 		return updatedAt;
 	}

@@ -25,9 +25,6 @@
  				<div class="monthly-logo-text col-4">
  					<h1 class="text-center mt-2">Q&A</h1>
  				</div>
- 				<div>
- 					<img src="/static/picture/puppy4.jpg" class= "puppy4 ml-5"/>
- 				</div>
  			</div>
  		<!-- /monthly-logo -->
  		
@@ -42,10 +39,10 @@
  			<tbody> 		
  			<c:forEach var="qna" items="${qnaList}">
  				<tr>
- 					<td>${qna.id}</td>
- 					<td><a href="/post/qna/detail/view?id=${qna.id}">${qna.title }</a></td>
- 					<td>${userLoginId}</td>
- 					<td><fmt:formatDate value="${qna.createdAt}" pattern="yyyy-MM-dd"/></td>
+ 					<td>${qna.qna.id}</td>
+ 					<td><a href="/post/qna/detail/view?id=${qna.qna.id}">${qna.qna.title }</a></td>
+ 					<td>${qna.user.loginId}</td>
+ 					<td><fmt:formatDate value="${qna.qna.createdAt}" pattern="yyyy-MM-dd"/></td>
  				</tr>
 	 		</c:forEach>		
  			</tbody>	

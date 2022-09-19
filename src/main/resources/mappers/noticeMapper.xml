@@ -4,65 +4,65 @@
  
  <mapper namespace="com.yoojung0318.puppyplay.post.notice.dao.NoticeDAO">
  
- <insert id="insertNotice" parameterType="map">
+	 <insert id="insertNotice" parameterType="map">
+	 
+		 INSERT INTO
+		 				`notice`
+		 (	 	
+		 	`userId`
+		 	,`title`
+		 	,`content`
+		 	,`createdAt`
+		 	,`updatedAt`
+		 )				
+	 	VALUES
+	 	(	
+	 		#{userId}  
+		 	,#{title}
+		 	, #{content}
+		 	, now()
+		 	, now()
+	 	)
+	 </insert>
+	 
+	 <update id="updateNotice" parameterType="map">
+	 	UPDATE 
+	 			`notice`
+	 	SET
+	 			`title` = #{title}
+	 			, `content` = #{content}
+	 			, `updatedAt` = now()
+	 	WHERE				
+	 			`id` = #{postId}
+	 
+	 </update>
+	 
+	 <select id="selectNoticeList" parameterType="map"
+	 resultType="com.yoojung0318.puppyplay.post.notice.model.Notice">
+	
+		SELECT 
+			`id`
+			,`userId`
+		 	,`title`
+		 	,`content`
+		 	,`createdAt`
+		 	,`updatedAt`
+		FROM	
+			`notice`
+	 </select>
  
-	 INSERT INTO
-	 				`notice`
-	 (	 	
-	 	`userId`
-	 	,`title`
-	 	,`content`
-	 	,`createdAt`
-	 	,`updatedAt`
-	 )				
- 	VALUES
- 	(	
- 		#{userId}  
-	 	,#{title}
-	 	, #{content}
-	 	, now()
-	 	, now()
- 	)
- </insert>
- 
- <update id="updateNotice" parameterType="map">
- 	UPDATE 
- 			`notice`
- 	SET
- 			`title` = #{title}
- 			, `content` = #{content}
- 			, `updatedAt` = now()
- 	WHERE				
- 			`id` = #{postId}
- 
- </update>
- 
- <select id="selectNoticeList" parameterType="map"
- resultType="com.yoojung0318.puppyplay.post.notice.model.Notice">
-
-	SELECT 
-		`id`
-		,`userId`
-	 	,`title`
-	 	,`content`
-	 	,`createdAt`
-	 	,`updatedAt`
-	FROM	
-		`notice`
- </select>
- 
- <select id="selectNotice" parameterType="int"
- resultType="com.yoojung0318.puppyplay.post.notice.model.Notice">
-  	SELECT 
-		`id`
-		,`userId`
-	 	,`title`
-	 	,`content`
-	 	,`createdAt`
-	 	,`updatedAt`
-	FROM	
-		`notice`
-	WHERE
-		`id` = #{id}	
- </select>
+	 <select id="selectNotice" parameterType="int"
+	 resultType="com.yoojung0318.puppyplay.post.notice.model.Notice">
+	  	SELECT 
+			`id`
+			,`userId`
+		 	,`title`
+		 	,`content`
+		 	,`createdAt`
+		 	,`updatedAt`
+		FROM	
+			`notice`
+		WHERE
+			`id` = #{id}	
+	 </select>
  </mapper>

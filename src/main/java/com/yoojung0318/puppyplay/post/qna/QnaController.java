@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.yoojung0318.puppyplay.post.qna.BO.QnaBO;
 import com.yoojung0318.puppyplay.post.qna.model.Qna;
+import com.yoojung0318.puppyplay.post.qna.model.QnaDetail;
 
 @Controller
 public class QnaController {
@@ -41,7 +42,7 @@ public class QnaController {
 			) {
 		
 		HttpSession session = request.getSession();
-		List<Qna> qnaList = qnaBO.getQnaList();
+		List<QnaDetail> qnaList = qnaBO.getQnaList();
 		model.addAttribute("qnaList", qnaList);
 		
 		return "post/qna/qnaList";

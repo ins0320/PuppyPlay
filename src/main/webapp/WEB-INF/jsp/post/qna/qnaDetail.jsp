@@ -42,16 +42,15 @@
 		 			<!-- 작성한 글 -->
 		 			<div class="mt-4 p-4 col-7" id="contentInput" > <pre>${qna.content}<pre> </div>
 		 			<hr class="hr-solid">
-		 			<!--  답글작성 textarea (관리자만)-->
+		 			<!--  답글작성 (관리자만)-->
 		 			<c:choose>
 			 			<c:when test="${userLoginId eq 'admin'}">
-			 				<textarea rows="7" class="form-control mt-4" id="answerInput"></textarea>
-			 			</c:when>
-			 			<c:otherwise>
-			 				${qna.answer}			 				
-			 			</c:otherwise>
-		 			</c:choose>
-		 			<div class="mt-4 p-4 col-7" id="contentInput" > <pre>${qna.answer}<pre> </div>
+			 				<textarea rows="7" class="form-control mt-4" id="answerInput">${qna.answer}</textarea>
+						</c:when>
+						<c:otherwise>
+							${qna.answer}
+						</c:otherwise>	
+					</c:choose>
 		 		</div>
 		 		<!-- /글 -->	
 		 	</div>	
@@ -73,30 +72,20 @@
 		
 			$("#saveBtn").on("click",function(){ 
 				let postId = $(this).data("post-id");
-				let title = $("#title").val();
-				let content = $("#content").val();
 				let answer = $("#answerInput").val();
-				
-				if(title=""){
+			
+				if(answer== ""){
 					alert("답변을 입력하세요");
 					return;
 				}
-				if(content=""){
-					alert("답변을 입력하세요");
-					return;
-				}
-				if(answer=""){
-					alert("답변을 입력하세요");
-					return;
-				}
-				
+		
 				$.ajax({
 					type:"post",
 					url:"/post/qna/reply",
-					data:{"postId":postId,"title":title, "content":content,"answer":answer},
+					data:{"postId":postId,"answer":answer},
 					success:function(data){
 						if(data.result == "success"){
-							location.href="/post/qna/list/view";
+							location.reload();
 						}else{
 							alret("답글저장실패");
 						}

@@ -10,7 +10,6 @@
  					`userId`
  					,`title`
  					,`content`
- 					,`answer`
  					,createdAt
  					,updatedAt
  		)			
@@ -19,7 +18,6 @@
  				#{userId}
  				,#{title}
  				,#{content}
- 				,#{answer}
  				,now()
  				,now()	
  		)				
