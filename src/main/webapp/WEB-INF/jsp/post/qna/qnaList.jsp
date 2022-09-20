@@ -31,7 +31,7 @@
  		<table class="table">
  			<thead>
  				<tr>
-		 			<th>번호</th>
+		 			<th>no.</th>
 		 			<th>제목</th>
 		 			<th>글쓴이</th>
 		 			<th>날짜</th>
@@ -41,15 +41,19 @@
  			<c:forEach var="qna" items="${qnaList}">
  				<tr>
  					<td>${qna.qna.id}</td>
- 					<td><a href="/post/qna/detail/view?id=${qna.qna.id}">${qna.qna.title }</a></td>
+ 					<td><a href="/post/qna/detail/view?id=${qna.qna.id}" style="color:black">문의합니다.</a></td>
  					<td>${qna.user.loginId}</td>
  					<td><fmt:formatDate value="${qna.qna.createdAt}" pattern="yyyy-MM-dd"/></td>
  				</tr>
  		
+ 				<!-- answer 바로가기 ( 단, 비어있는 경우 숨김) -->
  				<tr>
- 					<td><a href="/post/qna/detail/view?id=${qna.qna.id}">Re)답변드립니다.</a></td>
+ 					<c:if test="${not empty qna.qna.answer}">
+ 						<td colspan="3"><a href="/post/qna/detail/view?id=${qna.qna.id}"> ↳Re)답변 드립니다 :)</a></td>
+ 						<td><fmt:formatDate value="${qna.qna.updatedAt}" pattern="yyyy-MM-dd"/></td>
+ 					</c:if>
  				</tr>
- 		
+
 	 		</c:forEach>
 			
 	 				
