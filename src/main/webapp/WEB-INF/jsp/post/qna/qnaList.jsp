@@ -41,7 +41,7 @@
  			<c:forEach var="qna" items="${qnaList}">
  				<tr>
  					<td>${qna.qna.id}</td>
- 					<td><a href="/post/qna/detail/view?id=${qna.qna.id}" style="color:black">문의합니다.</a></td>
+ 					<td><a href="/post/qna/detail/view?id=${qna.qna.id}" class="text-dark">문의합니다.</a></td>
  					<td>${qna.user.loginId}</td>
  					<td><fmt:formatDate value="${qna.qna.createdAt}" pattern="yyyy-MM-dd"/></td>
  				</tr>

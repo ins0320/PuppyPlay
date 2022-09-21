@@ -7,9 +7,8 @@
 	<insert id="insertMonthly" parameterType="map">
 			INSERT INTO
 						`monthly`
-			(
-						`userId`
-						, `title`
+			(						
+						 `title`
 						, `start`
 						, `end`
 						, `createdAt`
@@ -17,8 +16,7 @@
 			)
 			VALUES			
 			(
-						#{userId}
-						, #{title}
+						 #{title}
 						, #{start}
 						, #{end}
 						, now()
@@ -30,18 +28,15 @@
 	 resultType="com.yoojung0318.puppyplay.post.monthly.model.Monthly">
 	 	
 	 		SELECT 
-						`userId`
+						`id`
 						, `title`
 						, `start`
 						, `end`
 						, `createdAt`
 						, `updatedAt``
 	 		FROM 	
-	 					`calendar`
-	 		WHERE
-	 				`userId` = #{userId}
-	 		AND		`title` = #{title}	
-	 			`		
+	 					`monthly`	
+	 					
 	 </select>
 	 
 	 

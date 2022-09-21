@@ -5,13 +5,9 @@ import java.util.Date;
 public class Monthly {
 
 	private int id;
-	private String userId;
 	private String title;
 	private Date start;
 	private Date end;
-	private String color;
-	private String textColor;
-	private boolean allDay = false;
 	private Date createdAt;
 	private Date updatedAt;
 	
@@ -22,12 +18,7 @@ public class Monthly {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public String getUserId() {
-		return userId;
-	}
-	public void setUserId(String userId) {
-		this.userId = userId;
-	}
+
 	public String getTitle() {
 		return title;
 	}
@@ -46,24 +37,7 @@ public class Monthly {
 	public void setEnd(Date end) {
 		this.end = end;
 	}
-	public String getColor() {
-		return color;
-	}
-	public void setColor(String color) {
-		this.color = color;
-	}
-	public String getTextColor() {
-		return textColor;
-	}
-	public void setTextColor(String textColor) {
-		this.textColor = textColor;
-	}
-	public boolean isAllDay() {
-		return allDay;
-	}
-	public void setAllDay(boolean allDay) {
-		this.allDay = allDay;
-	}
+
 	public Date getCreatedAt() {
 		return createdAt;
 	}

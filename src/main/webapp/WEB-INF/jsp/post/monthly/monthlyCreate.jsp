@@ -23,22 +23,7 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
  
- <!-- fullCalanser style-->
- <style> 
-  /* body 스타일 */
-  html, body {  
-     overflow: hidden; 
-     font-family: Arial, Helvetica Neue, Helvetica, sans-serif;  
-     font-size: 14px;  
-  } 
-  /* 캘린더 위의 해더 스타일(날짜가 있는 부분) */ 
-  .fc-header-toolbar { 
-      padding-top: 1em;  
-      padding-left: 1em;  
-      padding-right: 1em;  
-   }
- </style>
-</head>
+
 
 <body>
 	<div class="wrap">
@@ -68,55 +53,49 @@
 			var calendar = new FullCalendar.Calendar(calendarEl, {     
 				height: '500px', // calendar 높이 설정    
 				expandRows: true, // 화면에 맞게 높이 재설정
-				slotMinTime: '09:00', // Day 캘린더에서 시작 시간 
-				slotMaxTime: '18:00', // Day 캘린더에서 종료 시간
+				selectable: true,
 		
-                        headerToolbar: {
-                            left: 'prev,next today',
-                            center: 'title',
-                            right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek'
-                        },
-                        initialView: 'dayGridMonth', // 초기 로드 될때 보이는 캘린더 화면(기본 설정: 달) 
-                        initialDate: '2022-09-06', // 초기 날짜 설정 (설정하지 않으면 오늘 날짜가 보인다.)
-                        dayMaxEvents: true, // 이벤트가 오버되면 높이 제한 (+ 몇 개식으로 표현)
-                        selectable: true,// 달력 일자 드래그 설정가능
-                        expandRows: true,// 화면에 맞게 높이 재설정
-                        droppable: true, // this allows things to be dropped onto the calendar
-                        locale: 'ko',
-                        
-                        eventAdd: function(obj) { // 이벤트가 추가되면 발생하는 이벤트      
-                        	console.log(obj);      
-                        },      
-                        eventRemove: function(obj){ // 이벤트가 삭제되면 발생하는 이벤트    
-                        	console.log(obj);    
-                        },     
-                        select: function(arg) { // 캘린더에서 드래그로 이벤트를 생성할 수 있다.  
-                        	var title = prompt('Event Title:');   
-                        	if (title) {  
-                        		calendar.addEvent({    
-                        			title: title,     
-                        			start: arg.start,     
-                        			end: arg.end            
-                        		})         
-                        	}   
-                        	calendar.unselect()  
-                        }
-                   		,events: [        
-                   			{    
-                   				title: '야영',   
-                   				start: '2022-09-01',   
-                   			},   
-                   			{         
-                   				title: 'Long Event',     
-                   				start: '2022-09-15',  
-                   				end: '2022-09-16'     
-                   			},         
-                   		]
-                    });
-                 // 캘린더 랜더링  
-                 calendar.render();
+               	headerToolbar: {
+                    left: 'prev,next today',
+                    center: 'title',
+                    right: 'listWeek'
+                },
+                locale: 'ko',
+          
+                select: function(arg) { // 캘린더에서 드래그로 이벤트를 생성할 수 있다.  
+                	var title = prompt('Event Title:');                  	
+	                if (title) {  
+	                		calendar.addEvent({    
+	                			title: title,     
+	                			start: arg.start,     
+	                			end: arg.end            
+	                		})         
+	                	}  
+	                $.ajax({
+	                	 type:"post",
+	                	 url: "/post/monthly/create",
+	                	 data:{"title":title,"start":arg.start,"end":arg.end},
+	                	 success:function(data){
+	                		 if(data.result == "success"){
+	                			 location.reload();
+	                		 }else{
+	                			 alert("일정 작성 실패");
+	                		 }
+	                	 },
+	                	 error:function(){
+	                		 alert("일정 작성 에러");
+	                	 }                	
+	                });
+                	
+                }
+           		,events: function(info, successCallback, failureCallback) {
+        			
+        		}
             });
-        })();
+       	// 캘린더 랜더링  
+        calendar.render();
+     });
+  })();
 </script>
 </body>		
 </html>

@@ -36,14 +36,14 @@
  				</tr>
  			</thead>
  			<tbody>
- 			<c:forEach va="notice" items="${noticeList}">
+
  				<tr>
  					<td>001</td>
  					<td>9월 일정 입니다.</td>
  					<td>관리자</td>
  					<td>2022/08/24</td>
  				</tr>
-	 		</c:forEach>	
+	
  			</tbody>	
  		</table>
  		
