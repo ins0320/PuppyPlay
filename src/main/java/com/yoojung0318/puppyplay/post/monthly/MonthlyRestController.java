@@ -1,20 +1,17 @@
 package com.yoojung0318.puppyplay.post.monthly;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.yoojung0318.puppyplay.post.monthly.bo.MonthlyBO;
-import com.yoojung0318.puppyplay.user.bo.UserBO;
 
 @RestController
 public class MonthlyRestController {
@@ -46,6 +43,14 @@ public class MonthlyRestController {
 			return result;	
 	}
 	
-	//view가 아니라 api니까 controller에 만드거 여기로 가져오기 
+
+	@PostMapping("/post/monthly/list")
+	public Map<String, String> getMonthly(
+			@RequestParam("title") String title
+			,@RequestParam("start")String start
+			,@RequestParam("end")String end){
+	public List<Map<String, Object>> getMonthlyList = new ArrayList<>();
+	Map<String, Object> getMonthly = new HashMap<>();
 	
+	}
 }

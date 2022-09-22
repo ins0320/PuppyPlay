@@ -38,8 +38,7 @@ public class QnaController {
 	@GetMapping("/post/qna/list/view")
 	public String qnaList(
 			HttpServletRequest request
-			,Model model
-			) {
+			,Model model) {
 		
 		HttpSession session = request.getSession();
 		List<QnaDetail> qnaList = qnaBO.getQnaList();

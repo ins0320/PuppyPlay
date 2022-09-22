@@ -28,12 +28,5 @@ public class MonthlyController {
 		return "post/monthly/monthlyCreate";
 	};
 	
-	//이달의 일정 화면
-		@GetMapping("/post/monthly/view")
-		public String monthlyList(){
-			
-			List<Monthly> monthlyList = monthlyBO.getMonthlyList();
-			return "post/monthly/monthlyList";
-		};
 	
 }

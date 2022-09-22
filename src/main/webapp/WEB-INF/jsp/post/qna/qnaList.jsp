@@ -29,7 +29,7 @@
  		<!-- /monthly-logo -->
  		
  		<table class="table">
- 			<thead>
+ 			<thead class="ml-3">
  				<tr>
 		 			<th>no.</th>
 		 			<th>제목</th>
@@ -49,7 +49,8 @@
  				<!-- answer 바로가기 ( 단, 비어있는 경우 숨김) -->
  				<tr>
  					<c:if test="${not empty qna.qna.answer}">
- 						<td colspan="3"><a href="/post/qna/detail/view?id=${qna.qna.id}"> ↳Re)답변 드립니다 :)</a></td>
+ 						<td> </td>
+ 						<td colspan="2"><a href="/post/qna/detail/view?id=${qna.qna.id}" class=""> ↳Re)답변 드립니다 :)</a></td>
  						<td><fmt:formatDate value="${qna.qna.updatedAt}" pattern="yyyy-MM-dd"/></td>
  					</c:if>
  				</tr>
