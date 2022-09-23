@@ -88,6 +88,9 @@
 	                });
                 	
                 }
+                , eventClick: function (info){ //event 클릭시, 삭제
+                        info.event.remove();
+                    }
            		,events: function(arg, successCallback, failureCallback) {
            			$.ajax({
            				type: "get",
