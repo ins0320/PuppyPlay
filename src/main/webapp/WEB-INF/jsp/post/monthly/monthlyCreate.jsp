@@ -88,8 +88,19 @@
 	                });
                 	
                 }
-           		,events: function(info, successCallback, failureCallback) {
-        			
+           		,events: function(arg, successCallback, failureCallback) {
+           			$.ajax({
+           				type: "get",
+        				url: "/post/monthly/list",
+        				success: function(data) {
+        					successCallback(data);
+	                	 },
+	                	 error:function(){
+	                		 alert("일정 로드 에러");
+	                	 }                	
+        					
+        				
+        			});
         		}
             });
        	// 캘린더 랜더링  

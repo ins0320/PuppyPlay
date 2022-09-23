@@ -7,11 +7,13 @@ import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.yoojung0318.puppyplay.post.monthly.bo.MonthlyBO;
+import com.yoojung0318.puppyplay.post.monthly.model.Monthly;
 
 @RestController
 public class MonthlyRestController {
@@ -44,13 +46,10 @@ public class MonthlyRestController {
 	}
 	
 
-	@PostMapping("/post/monthly/list")
-	public Map<String, String> getMonthly(
-			@RequestParam("title") String title
-			,@RequestParam("start")String start
-			,@RequestParam("end")String end){
-	public List<Map<String, Object>> getMonthlyList = new ArrayList<>();
-	Map<String, Object> getMonthly = new HashMap<>();
+	@GetMapping("/post/monthly/list")
+	// public List<Monthly> getMonthly(){
+	public List<Map<String, String>> getMonthly(){
+		return monthlyBO.getMonthlyDetailList();
 	
 	}
 }

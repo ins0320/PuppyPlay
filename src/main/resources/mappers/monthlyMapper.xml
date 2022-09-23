@@ -24,7 +24,7 @@
 			)
 	</insert>
  
-	 <select id="selectMonthly" parameterType="map"
+	 <select id="selectMonthlyList" parameterType="map"
 	 resultType="com.yoojung0318.puppyplay.post.monthly.model.Monthly">
 	 	
 	 		SELECT 
@@ -33,7 +33,7 @@
 						, `start`
 						, `end`
 						, `createdAt`
-						, `updatedAt``
+						, `updatedAt`
 	 		FROM 	
 	 					`monthly`	
 	 					
