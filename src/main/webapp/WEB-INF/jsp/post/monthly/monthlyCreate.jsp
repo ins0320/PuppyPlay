@@ -89,8 +89,19 @@
                 	
                 }
                 , eventClick: function (info){ //event 클릭시, 삭제
-                        info.event.remove();
-                    }
+                        $.ajax({
+                        	type: "get",
+                        	url: "/post/monthly/remove",
+                        	data:{"title":title,"start":arg.start,"end":arg.end},
+                        	success: function(data){
+                        		info.event.remove();
+                        	},
+                        	error: function(){
+                        		alert("일정 삭제 에러");
+                        	}
+                        });
+                		
+                 }
            		,events: function(arg, successCallback, failureCallback) {
            			$.ajax({
            				type: "get",

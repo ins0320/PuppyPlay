@@ -19,6 +19,11 @@ public interface MonthlyDAO {
 			,@Param("start") Date start
 			,@Param("end") Date end);
 	
+	public int deleteMonthly(
+			@Param("title") String title
+			,@Param("start") Date start
+			,@Param("end") Date end);
+	
 	public List<Monthly> selectMonthlyList();
 }
 		
