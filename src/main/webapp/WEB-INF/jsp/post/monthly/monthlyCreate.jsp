@@ -54,6 +54,7 @@
 				height: '500px', // calendar 높이 설정    
 				expandRows: true, // 화면에 맞게 높이 재설정
 				selectable: true,
+				droppable: true,
 		
                	headerToolbar: {
                     left: 'prev,next today',
@@ -88,19 +89,32 @@
 	                });
                 	
                 }
-                , eventClick: function (info){ //event 클릭시, 삭제
-                        $.ajax({
-                        	type: "get",
-                        	url: "/post/monthly/remove",
-                        	data:{"title":title,"start":arg.start,"end":arg.end},
-                        	success: function(data){
-                        		info.event.remove();
-                        	},
-                        	error: function(){
-                        		alert("일정 삭제 에러");
-                        	}
-                        });
-                		
+                ,eventClick: function(arg){ //event 클릭시, 삭제
+                	console.log(arg);
+                	var events = new Array();
+                	var obj = new Object();
+                	
+                	obj.title = arg.event._def.title;
+                    obj.start = arg.event._instance.range.start;
+                    obj.end = arg.event._instance.range.end;
+                    events.push(obj);
+                    
+                    console.log(events);
+                    $(function deleteData() {
+	                	$.ajax({
+	                        	type: "get",
+	                        	url: "/post/monthly/remove",
+	                        	data:{"text":text, "start":start,"end":end},
+	                        	success: function(data){
+	                        		if(postId){
+	                        			arg.event.remove();
+	                        		}
+	                        	},
+	                        	error: function(){
+	                        		alert("일정 삭제 에러");
+	                        	}
+	                        });
+                    }	
                  }
            		,events: function(arg, successCallback, failureCallback) {
            			$.ajax({

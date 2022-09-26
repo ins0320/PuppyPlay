@@ -24,6 +24,7 @@ public interface MonthlyDAO {
 			,@Param("start") Date start
 			,@Param("end") Date end);
 	
+	
 	public List<Monthly> selectMonthlyList();
 }
 		

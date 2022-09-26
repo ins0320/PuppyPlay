@@ -43,8 +43,8 @@
 	 	DELETE FROM
 	 				`monthly`
 	 	WHERE
-	 			`id` = #{id}
-		AND   `title` = #{title}	
+	 			title= {#title}
+	 	AND		id = {id}
 	 
 	 </delete>
 	 
