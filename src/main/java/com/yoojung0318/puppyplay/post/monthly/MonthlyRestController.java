@@ -45,25 +45,6 @@ public class MonthlyRestController {
 			return result;	
 	}
 	
-	@GetMapping("/post/monthly/remove")
-	// public List<Monthly> getMonthly(){
-	public Map<String, String> removeMonthly(
-			@RequestParam("title") String title
-			,@RequestParam("start") Date start
-			,@RequestParam("end") Date end){
-			
-			int count = monthlyBO.removeMonthly(title,start,end);
-			
-			Map<String, String> result = new HashMap<>();
-			if(count == 1) {
-				result.put("result", "success");
-			}else {
-				result.put("result", "fail");
-			}	
-			
-			return result;	
-	}
-	
 	@GetMapping("/post/monthly/list")
 	// public List<Monthly> getMonthly(){
 	public List<Map<String, String>> getMonthly(){

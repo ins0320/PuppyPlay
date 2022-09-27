@@ -25,10 +25,6 @@ public class MonthlyBO {
 		return monthlyDAO.insertMonthly(title, start, end);
 	}
 	
-public int removeMonthly(String title, Date start, Date end) {
-		
-		return monthlyDAO.deleteMonthly(title, start, end);
-	}
 	
 	public List<Map<String, String>> getMonthlyDetailList() {
 		

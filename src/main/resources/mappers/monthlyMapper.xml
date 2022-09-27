@@ -39,13 +39,5 @@
 	 					
 	 </select>
 	 
-	 <delete id="deleteMonthly" parameterType="int">
-	 	DELETE FROM
-	 				`monthly`
-	 	WHERE
-	 			title= {#title}
-	 	AND		id = {id}
-	 
-	 </delete>
 	 
  </mapper>
