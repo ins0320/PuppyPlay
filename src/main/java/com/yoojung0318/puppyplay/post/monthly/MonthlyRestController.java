@@ -44,6 +44,24 @@ public class MonthlyRestController {
 			
 			return result;	
 	}
+	@PostMapping("/post/monthly/delete")
+	public Map<String, String> deleteMonthly(
+			@RequestParam("id") int id){
+					
+			//글쓴 사람 정보를 같이 저장하기 위해서
+			// 로그인된 사용자의 id(userId - User 테이블의 PK)를 세션을 통해 얻어내고, 이를 사용
+
+			int count = monthlyBO.deleteMonthly(id);
+			
+			Map<String, String> result = new HashMap<>();
+			if(count == 1) {
+				result.put("result", "success");
+			}else {
+				result.put("result", "fail");
+			}	
+			
+			return result;	
+	}
 	
 	@GetMapping("/post/monthly/list")
 	// public List<Monthly> getMonthly(){

@@ -38,6 +38,27 @@
 	 					`monthly`	
 	 					
 	 </select>
-	 
+	 <select id="selectMonthly" parameterType="int"
+	 resultType="com.yoojung0318.puppyplay.post.monthly.model.Monthly">
+	 		SELECT 
+						`id`
+						, `title`
+						, `start`
+						, `end`
+						, `createdAt`
+						, `updatedAt`
+	 		FROM 	
+	 					`monthly`
+	 		WHERE	
+	 					`id` = #{id}			
+	
+	 </select>
+	
+	 <delete id="deleteMonthly" parameterType="int">
+	 	DELETE FROM
+	 				`monthly`
+	 	WHERE
+	 				`id` = #{id}	
+	 </delete>
 	 
  </mapper>

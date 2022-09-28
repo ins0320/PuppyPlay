@@ -56,12 +56,34 @@
 				selectable: true,
 				droppable: true,
 		
+				customButtons: {
+				    deleteButton: {
+				      text: '삭제하기',
+				      click: function(arg) {
+				        calendar.removeAllEvents();
+				        alert("일정이 모두삭제되었습니다.");
+					    events: function(arg, successCallback, failureCallback) {
+			           	        $.ajax({
+					            	 type:"post",
+					            	 url: "/post/monthly/delete",
+					            	 data:{"id":id},		            	 
+					            	 success:function(data){
+					            		successCallback(data);					      
+					            	 },
+					            	 error:function(){
+					            		 alert("일정 삭제 에러");
+					            	 }                	
+			          			 });
+				      }
+				    }
+				},
                	headerToolbar: {
                     left: 'prev,next today',
                     center: 'title',
-                    right: 'listWeek'
+                    right: 'listWeek, deleteButton'
                 },
                 locale: 'ko',
+                
           
                 select: function(arg) { // 캘린더에서 드래그로 이벤트를 생성할 수 있다.  
                 	var title = prompt('Event Title:');                  	
@@ -88,7 +110,7 @@
 	                	 }                	
 	                });
                 	
-                }s
+                }
            		,events: function(arg, successCallback, failureCallback) {
            			$.ajax({
            				type: "get",
@@ -102,6 +124,8 @@
         					
         				
         			});
+        		}
+           		,
         		}
             });
        	// 캘린더 랜더링  

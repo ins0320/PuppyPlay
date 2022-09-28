@@ -25,7 +25,6 @@ public class MonthlyBO {
 		return monthlyDAO.insertMonthly(title, start, end);
 	}
 	
-	
 	public List<Map<String, String>> getMonthlyDetailList() {
 		
 		List<Map<String, String>> monthlyDetailList = new ArrayList<>();
@@ -55,6 +54,11 @@ public class MonthlyBO {
 		}
 		return monthlyDetailList;
 		//return  monthlyDAO.selectMonthlyList();
+	}
+	public int deleteMonthly(int id) {
+		Monthly  monthly = monthlyDAO.selectMonthly(id);
+		int count = monthlyDAO.deleteMonthly(id);
+		return count;
 	}
 	
 	
