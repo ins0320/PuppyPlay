@@ -31,6 +31,7 @@
 			<c:import url="/WEB-INF/jsp/include/header.jsp" />
 			<div class="header mb-2">
 				 이번달 일정 입니다.
+				 
 			</div>
 			<!-- calendar --> 
 			<div class="padding:30px">
@@ -50,8 +51,6 @@
 			$(function(){     
 				// calendar element 취득   
 				var calendarEl = $('#calendar')[0];   
-				var userLoginId = ${'userLoginId'};
-				alert(userLoginId);
 				// full-calendar 생성하기  
 				var calendar = new FullCalendar.Calendar(calendarEl, {     
 					height: '500px', // calendar 높이 설정    
@@ -67,8 +66,7 @@
 					        alert("일정이 모두삭제되었습니다.");
 				            $.ajax({
 								 type:"post",
-								 url: "/post/monthly/delete",
-						         data:{"id":id},		            	 
+								 url: "/post/monthly/delete",		            	 
 						         success:function(data){
 						         	location.reload();			      
 						          },
@@ -88,7 +86,8 @@
 	                
 	          	
 	                select: function(arg) { // 캘린더에서 드래그로 이벤트를 생성할 수 있다.  
-	                	var title = prompt('Event Title:');                  	
+	                	var title = prompt('Event Title:');    
+	                	var userLoginId = ${userLoginId};
 		                if (title) {  
 		                		calendar.addEvent({    
 		                			title: title,     
@@ -102,7 +101,9 @@
 		                	 data:{"title":title,"start":arg.start,"end":arg.end},
 		                	 success:function(data){
 		                		 if(data.result == "success"){
+		                			 if(userLoginId == 'admin'){
 		                			 location.reload();
+		                			 }
 		                		 }else{
 		                			 alert("일정 작성 실패");
 		                		 }

@@ -55,9 +55,9 @@ public class MonthlyBO {
 		return monthlyDetailList;
 		//return  monthlyDAO.selectMonthlyList();
 	}
-	public int deleteMonthly(int id) {
-		Monthly  monthly = monthlyDAO.selectMonthly(id);
-		int count = monthlyDAO.deleteMonthly(id);
+	public int deleteMonthly() {
+		Monthly  monthly = monthlyDAO.selectMonthly();
+		int count = monthlyDAO.deleteMonthly();
 		return count;
 	}
 	

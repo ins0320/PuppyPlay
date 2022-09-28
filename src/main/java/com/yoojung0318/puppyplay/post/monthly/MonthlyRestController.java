@@ -6,6 +6,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -46,12 +49,13 @@ public class MonthlyRestController {
 	}
 	@PostMapping("/post/monthly/delete")
 	public Map<String, String> deleteMonthly(
-			@RequestParam("id") int id){
+						HttpServletRequest request){
 					
 			//글쓴 사람 정보를 같이 저장하기 위해서
 			// 로그인된 사용자의 id(userId - User 테이블의 PK)를 세션을 통해 얻어내고, 이를 사용
-
-			int count = monthlyBO.deleteMonthly(id);
+			HttpSession session = request.getSession();
+			int userId = (Integer) session.getAttribute("userId");
+			int count = monthlyBO.deleteMonthly();
 			
 			Map<String, String> result = new HashMap<>();
 			if(count == 1) {

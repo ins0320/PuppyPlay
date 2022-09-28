@@ -42,6 +42,7 @@
 	 resultType="com.yoojung0318.puppyplay.post.monthly.model.Monthly">
 	 		SELECT 
 						`id`
+						,`userId`
 						, `title`
 						, `start`
 						, `end`
