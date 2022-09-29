@@ -25,7 +25,7 @@
 				<div>
 					<!-- 문구 -->
 					<div class="d-flex mt-3 justify-content-center">
-						<h2>Puppy Play</h2>
+						<h2> Puppy Play</h2>
 						<img src="/static/picture/footprint.png" class="footprint mt-2 ml-2">
 					</div>
 					<div class="text-secondary mt-3 text-center">Puppy Play 회원 전용 서비스 입니다.</div>
