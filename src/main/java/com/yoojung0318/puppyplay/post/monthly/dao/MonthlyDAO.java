@@ -20,9 +20,8 @@ public interface MonthlyDAO {
 			,@Param("end") Date end);
 	
 	
-	public Monthly selectMonthly();
 	
-	public int deleteMonthly();
+	public int deleteMonthly(@Param("userId")int userId);
 	
 	public List<Monthly> selectMonthlyList();
 }
