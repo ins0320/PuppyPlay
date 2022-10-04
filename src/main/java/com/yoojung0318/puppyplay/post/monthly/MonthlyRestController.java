@@ -38,13 +38,13 @@ public class MonthlyRestController {
 			//글쓴 사람 정보를 같이 저장하기 위해서
 			// 로그인된 사용자의 id(userId - User 테이블의 PK)를 세션을 통해 얻어내고, 이를 사용
 			HttpSession session = request.getSession();
-			String userLoginId = (String) session.getAttribute("userLoginId");
-			
+			String userLoginId = (String)session.getAttribute("userLoginId");
+
 			int  count = 0;
 			if(userLoginId == "admin") {
 				count = monthlyBO.addMonthly(title,start,end);
 			}
-				
+				count = monthlyBO.addMonthly(title,start,end);
 				Map<String, String> result = new HashMap<>();
 				if(count == 1) {
 					
@@ -57,14 +57,11 @@ public class MonthlyRestController {
 		
 	}
 	@PostMapping("/post/monthly/delete")
-	public Map<String, String> deleteMonthly(
-						HttpServletRequest request){
+	public Map<String, String> deleteMonthly(){
 					
-			//글쓴 사람 정보를 같이 저장하기 위해서
-			// 로그인된 사용자의 id(userId - User 테이블의 PK)를 세션을 통해 얻어내고, 이를 사용
-			HttpSession session = request.getSession();
-			int userId = (Integer) session.getAttribute("userId");
-			int count = monthlyBO.deleteMonthly(userId);
+
+			
+			int count = monthlyBO.deleteMonthly();
 			
 			Map<String, String> result = new HashMap<>();
 			if(count == 1) {

@@ -21,7 +21,7 @@ public interface MonthlyDAO {
 	
 	
 	
-	public int deleteMonthly(@Param("userId")int userId);
+	public int deleteMonthly();
 	
 	public List<Monthly> selectMonthlyList();
 }
