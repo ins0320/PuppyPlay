@@ -16,8 +16,34 @@
 * 애견유치원 이용 고객을 대상으로 제공되는 서비스
 * 월별 일정 공지, 하루 일과 안내, 공지사항, Q&A 기능 제공
 
-### 포트폴리오
-📌외부라이센스
+### 👩‍🏫 포트폴리오
+[포트폴리오](https://github.com/yoojung0318/PuppyPlay/blob/master/puppyplay.pdf)
+
+### 📐 설계
+* [UI 기획](https://ovenapp.io/view/77ilGaNHK16r9C87JIIWvV15iyX97YFo/)
+* [데이터베이스, URL 설계](https://docs.google.com/spreadsheets/d/16qbpdO0wXlZNuEjt_IJBt4AOWvxPrsJkdOZOYPA2Zeo/edit#gid=0)
+
+### 📋 주요기능
+* 회원가입
+  * package: [com.yoojung0318.puppyplay.user.*](https://github.com/yoojung0318/PuppyPlay/tree/master/src/main/java/com/yoojung0318/puppyplay/user)
+  * view: [/webapp/WEB-INF/jsp/user/*](https://github.com/yoojung0318/PuppyPlay/tree/master/src/main/webapp/WEB-INF/jsp/user)
+* 로그인
+  * package: [com.yoojung0318.puppyplay.user.*](https://github.com/yoojung0318/PuppyPlay/tree/master/src/main/java/com/yoojung0318/puppyplay/user)
+  * view: [/webapp/WEB-INF/jsp/user/*](https://github.com/yoojung0318/PuppyPlay/tree/master/src/main/webapp/WEB-INF/jsp/user)
+* 오늘의 일정
+  * package: [com.yoojung0318.puppyplay.post.today.*](https://github.com/yoojung0318/PuppyPlay/tree/master/src/main/java/com/yoojung0318/puppyplay/post/today)
+   * view: [/webapp/WEB-INF/jsp/post/today/*](https://github.com/yoojung0318/PuppyPlay/tree/master/src/main/webapp/WEB-INF/jsp/post/today)
+* 이달의 일정
+  * package: [com.yoojung0318.puppyplay.post.monthly.*](https://github.com/yoojung0318/PuppyPlay/tree/master/src/main/java/com/yoojung0318/puppyplay/post/monthly)
+  * view: [/webapp/WEB-INF/jsp/post/monthly/*](https://github.com/yoojung0318/PuppyPlay/tree/master/src/main/webapp/WEB-INF/jsp/post/monthly)
+* 공지사항
+  * package: [com.yoojung0318.puppyplay.post.notice.*](https://github.com/yoojung0318/PuppyPlay/tree/master/src/main/java/com/yoojung0318/puppyplay/post/notice)
+  * view: [/webapp/WEB-INF/jsp/post/notice/*](https://github.com/yoojung0318/PuppyPlay/tree/master/src/main/webapp/WEB-INF/jsp/post/notice)
+* Q&A
+  * package: [com.yoojung0318.puppyplay.post.qna.*](https://github.com/yoojung0318/PuppyPlay/tree/master/src/main/java/com/yoojung0318/puppyplay/post/qna)
+  * view: [/webapp/WEB-INF/jsp/post/qna/*](https://github.com/yoojung0318/PuppyPlay/tree/master/src/main/java/com/yoojung0318/puppyplay/post/qna)
+  
+### 📌외부라이센스
 - Tomcat [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0)
 - Mysql [GPLv2 or proprietary](https://www.gnu.org/licenses/gpl-3.0.html)
 - Spring framework [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0)
