@@ -45,7 +45,8 @@
 				,updatedAt
  		FROM
 				`qna`
-				 	
+		ORDER BY
+				`id` DESC		 	
  	
  	</select>
  	
