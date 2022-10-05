@@ -17,7 +17,7 @@
 * 월별 일정 공지, 하루 일과 안내, 공지사항, Q&A 기능 제공
 
 ### 👩‍🏫 포트폴리오
-[포트폴리오](https://github.com/yoojung0318/PuppyPlay/blob/master/puppyplay.pdf)
+[포트폴리오](https://github.com/yoojung0318/PuppyPlay/blob/master/puppyplay_portpolio.pdf)
 
 ### 📐 설계
 * [UI 기획](https://ovenapp.io/view/77ilGaNHK16r9C87JIIWvV15iyX97YFo/)
@@ -43,6 +43,10 @@
   * package: [com.yoojung0318.puppyplay.post.qna.*](https://github.com/yoojung0318/PuppyPlay/tree/master/src/main/java/com/yoojung0318/puppyplay/post/qna)
   * view: [/webapp/WEB-INF/jsp/post/qna/*](https://github.com/yoojung0318/PuppyPlay/tree/master/src/main/java/com/yoojung0318/puppyplay/post/qna)
   
+### 🎥 데모
+  📃  회원 가입 및 로그인:<img src="https://github.com/yoojung0318/PuppyPlay/blob/master/signin%2Csignup.gif"/>
+    
+
 ### 📌외부라이센스
 - Tomcat [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0)
 - Mysql [GPLv2 or proprietary](https://www.gnu.org/licenses/gpl-3.0.html)
