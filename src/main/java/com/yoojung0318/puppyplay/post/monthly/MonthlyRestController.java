@@ -44,7 +44,6 @@ public class MonthlyRestController {
 			if(userLoginId == "admin") {
 				count = monthlyBO.addMonthly(title,start,end);
 			}
-				count = monthlyBO.addMonthly(title,start,end);
 				Map<String, String> result = new HashMap<>();
 				if(count == 1) {
 					
