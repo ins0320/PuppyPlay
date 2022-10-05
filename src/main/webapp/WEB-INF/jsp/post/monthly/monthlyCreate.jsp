@@ -87,7 +87,7 @@
 	          	
 	                select: function(arg) { // 캘린더에서 드래그로 이벤트를 생성할 수 있다.  
 	                	var title = prompt('Event Title:');    
-	                	var userLoginId = ${userLoginId};
+
 		                if (title) {  
 		                		calendar.addEvent({    
 		                			title: title,     
@@ -100,10 +100,9 @@
 		                	 url: "/post/monthly/create",
 		                	 data:{"title":title,"start":arg.start,"end":arg.end},
 		                	 success:function(data){
-		                		 if(data.result == "success"){
-		                			 if(userLoginId == 'admin'){
+		                		 if(data.result == "success"){		                			 
 		                			 location.reload();
-		                			 }
+
 		                		 }else{
 		                			 alert("일정 작성 실패");
 		                		 }
