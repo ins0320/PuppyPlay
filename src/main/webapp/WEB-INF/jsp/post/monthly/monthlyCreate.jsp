@@ -80,7 +80,7 @@
 	               	headerToolbar: {
 	                    left: 'prev,next today',
 	                    center: 'title',
-	                    right: 'listWeek, deleteButton'
+	                    right: 'deleteButton'
 	                },
 	                locale: 'ko',
 	                
