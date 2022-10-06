@@ -41,10 +41,9 @@ public class MonthlyRestController {
 			String userLoginId = (String)session.getAttribute("userLoginId");
 
 			int  count = 0;
-			if(userLoginId == "admin") {
+			if(userLoginId.equals("admin")) {
 				count = monthlyBO.addMonthly(title,start,end);
 			}
-				count = monthlyBO.addMonthly(title,start,end);
 				Map<String, String> result = new HashMap<>();
 				if(count == 1) {
 					
