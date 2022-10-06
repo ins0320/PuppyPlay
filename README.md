@@ -44,8 +44,11 @@
   * view: [/webapp/WEB-INF/jsp/post/qna/*](https://github.com/yoojung0318/PuppyPlay/tree/master/src/main/java/com/yoojung0318/puppyplay/post/qna)
   
 ### 🎥 데모
-  📃  회원 가입 및 로그인:<img src="https://github.com/yoojung0318/PuppyPlay/blob/master/signin%2Csignup.gif"/>
-    
+  📃  회원 가입 및 로그인:<img src="https://github.com/yoojung0318/PuppyPlay/blob/master/signin%2C%20signup.gif"/>
+  📃  오늘의 일정:<img src="https://github.com/yoojung0318/PuppyPlay/commit/b8fc0760e3c91fcb249d93d73e26ba415b5ff918"/>
+  📃  이달의 일정:<img src=""/>
+  📃  공지사항:<img src="https://github.com/yoojung0318/PuppyPlay/commit/dfba6343cd91e7bc72069979e4f2196da9f88c6b"/>
+  📃  Q&A:<img src="https://github.com/yoojung0318/PuppyPlay/commit/2ab7800df31ff51c78af0a4c613392a7167b342d"/>
 
 ### 📌외부라이센스
 - Tomcat [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0)
